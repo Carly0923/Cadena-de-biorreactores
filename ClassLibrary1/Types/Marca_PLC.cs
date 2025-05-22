@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Dominio_Fermentación.Common;
+using Dominio_Fermentación.Entities.Abstract;
+using Dominio_Fermentación.Rules;
 namespace Dominio_Fermentación.Types
 {
   public enum Marca_PLC
