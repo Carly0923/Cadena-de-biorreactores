@@ -17,7 +17,6 @@ namespace Dominio_Fermentación.Entities
    public volumen_trabajo_util Volumen { get; set; } = volumen_trabajo_util.V75L;
    /// <summary> Etapa de crecimiento microbiano </summary>
    public etapa_crecimiento_microbiano Etapa_Fermentador { get; set; } = etapa_crecimiento_microbiano.Adaptacion;
-   
    #endregion
    /// Métodos
    /// <summary> Constructor Fermentador </summary>

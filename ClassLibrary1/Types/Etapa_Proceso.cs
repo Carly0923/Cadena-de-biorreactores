@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Types
 {
+  /// <summary> El proceso fermentativo en sí tiene muchas etapas, esto lo movemos luego en código main usando TON o timers </summary>
   public enum Etapa_Proceso
   {
    #region

@@ -9,19 +9,19 @@ namespace Dominio_Fermentación.Types
   public enum unidades_medida_mostradas
   {
    #region
-   /// temperatura en grados celsius
+   /// <summary> temperatura en grados celsius </summary>
    grados_Celsius,
-   /// pH 0 a 14
+   /// <summary> nivel de pH de 0 a 14 </summary>
    pH_level,
-   /// porcentaje de oxígeno disuelto
+   /// <summary> porcentaje de oxígeno disuelto </summary>
    por_ciento,
-   /// nivel en litros
+   /// <summary> nivel en litros </summary>
    litros,
-   /// presión en Pascal
+   /// <summary> presión en Pascal </summary>
    Pa,
-   /// peso húmedo en gramos/litro
+   /// <summary> peso húmedo en gramos/litro </summary>
    gramos_por_litro,
-   /// velocidad de agitación en revoluciones por minuto
+   /// <summary> velocidad de agitación en revoluciones por minuto </summary>
    revoluciones_por_minuto,
    #endregion
   }

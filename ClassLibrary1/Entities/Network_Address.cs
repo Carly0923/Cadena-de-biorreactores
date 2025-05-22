@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio_Fermentación.Types;
+using Dominio_Fermentación.Common;
+using Dominio_Fermentación.Rules;
+using Dominio_Fermentación.Entities.Abstract;
 
 namespace Dominio_Fermentación.Entities
 {
  internal class Network_Address
  {
   #region Propiedades
-  /// Dirección IP
+  /// <summary> Dirección IP </summary>
   public string Direccion_IP { get; }
-  /// Puerto
+  /// <summary> Puerto </summary>
   public int Direccion_Puerto { get;}
   #endregion
 
   #region Métodos
+  /// <summary> Validar la dirección de red </summary> 
   public Network_Address(string direccion_IP, int direccion_Puerto) 
   {
    var ipParticionado=direccion_IP.Split('.');
@@ -28,8 +33,8 @@ namespace Dominio_Fermentación.Entities
           if (partNumber < 0 || partNumber > 255)
               throw new ArgumentException("Dirección IP inválida.");
        }
-            if (direccion_Puerto < 1023 || direccion_Puerto > 65535)
-                throw new ArgumentException("Dirección de puerto inválida.");
+         if (direccion_Puerto < 1023 || direccion_Puerto > 65535)
+            throw new ArgumentException("Dirección de puerto inválida.");
    
    Direccion_IP= direccion_IP;
    Direccion_Puerto= direccion_Puerto;

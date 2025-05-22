@@ -9,11 +9,11 @@ namespace Dominio_Fermentación.Types
   public enum volumen_trabajo_util
   {
    #region
-   /// 75 litros de volumen de trabajo útil.
+   /// <summary> 75 litros de volumen de trabajo útil. </summary>
    V75L,
-   /// 300 litros de volumen de trabajo útil.
+   /// <summary> 300 litros de volumen de trabajo útil. </summary>
    V300L,
-   /// 3000 litros de volumen de trabajo útil.
+   /// <summary> 3000 litros de volumen de trabajo útil. </summary>
    V3000L,
    #endregion
   }

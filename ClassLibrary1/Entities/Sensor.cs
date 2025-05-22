@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio_Fermentación.Common;
+using Dominio_Fermentación.Entities.Abstract;
 
- namespace Dominio_Fermentación.Entities
+namespace Dominio_Fermentación.Entities
  {
    public class Sensor
    {
@@ -19,10 +21,13 @@ using System.Threading.Tasks;
     /// <summary> variables que mide este sensor </summary>
     public List<Variable> Variables { get; private set; }
     #endregion
+    
+    #region Methods
     /// <summary> Constructor </summary>
-     public Sensor(Id_unidad id_number)
-     {
-      Id_sensor = id_number;
-     }
+    public Sensor(Id_unidad id_number)
+    {
+     Id_sensor = id_number;
+    }
+    #endregion
    }
- }
+}

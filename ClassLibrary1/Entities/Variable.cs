@@ -11,15 +11,16 @@ namespace Dominio_Fermentación.Entities
 {
   public class Variable
   {
-   #region
-   ///Número de la medición
+   #region Properties
+   /// <summary> Entidad numérica que después debe ser acompañada por la unidad de medida </summary>
    public float Medicion { get; set; }
-   /// unidad de medida
+   /// <summary> La unidad de medida </summary>
    public unidades_medida_mostradas unidad { get; set; } = unidades_medida_mostradas.grados_Celsius;
-   ///punto de comunicación
+   ///<summary> Punto del nodo de comunicación </summary>
    public Comunication_Node Node { get; set; }
    #endregion
-   ///Métodos
+
+   #region Metodos
    ///Constructor
    public Variable(float number,unidades_medida_mostradas Unidad,Comunication_Node node)
    {
@@ -27,5 +28,6 @@ namespace Dominio_Fermentación.Entities
     unidad = Unidad;
     Node= node;
    }
+   #endregion
   }
 }
