@@ -13,6 +13,8 @@ namespace Dominio_Fermentación.Types
    #region
    /// Siemens S7-300
    S7_300,
+   /// Siemens S7-400
+   S7_400,
    /// Siemens s7-1200
    S7_1200,
    /// Siemens s7_1500
