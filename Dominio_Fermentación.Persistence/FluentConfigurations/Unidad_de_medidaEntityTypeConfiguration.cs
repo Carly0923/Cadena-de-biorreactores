@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Unidad_de_medida");
-            builder.OwnsOne(x => x.IP_Address);
+            builder.OwnsOne(x => x.IP_Address);//
         }
     }
 }

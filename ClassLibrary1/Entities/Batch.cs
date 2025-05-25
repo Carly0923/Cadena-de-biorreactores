@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Types;
 
 
 namespace Dominio_Fermentación.Entities
 {
   public class Batch
+        :Entity
   {
    #region Propiedades
    /// <summary> Identificador del lote producido </summary>

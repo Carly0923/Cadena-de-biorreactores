@@ -9,7 +9,7 @@ using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
 //using EquipmentMonitoring.Domain.Errors;
 //using EquipmentMonitoring.Domain.ValueObjects;
-//using FluentResults;
+using FluentResults;
 
 namespace Dominio_Fermentación.Entities
 {
