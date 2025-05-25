@@ -18,7 +18,7 @@ namespace Dominio_Fermentación.Entities
    /// <summary> Fecha de Finalización del lote </summary>
    public DateTime? Final_Date { get; set; }
    /// <summary> Producto en fermentación enumerado guradado en Types </summary>
-   public Sustancias_Producto producto { get; set; } = Sustancias_Producto.Heberviobac_Hepatitis;
+   public Sustancias_Producto producto { get; set; } = Sustancias_Producto.Heberviobac_Hepatitis_B;
    /// <summary> Etapa fermentación, comienza con la inoculacion de 5 a 75 litros </summary>
    public Etapa_Proceso Etapa_Proceso { get; set; } = Etapa_Proceso.Etapa_0;
    #endregion

@@ -16,7 +16,7 @@ namespace Dominio_Fermentación.Types
    /// <summary> Heberviobac, vacuna contra la hepatitis B
    /// Usa también la levadura Pichia Pastoris, decodifina solo el gen AOX1, no hay cambios en la fuente de carbono
    /// Solo utiliza glicerol </summary>
-   Heberviobac_Hepatitis,
+   Heberviobac_Hepatitis_B,
    #endregion
   }
 }

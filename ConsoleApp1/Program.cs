@@ -2,6 +2,5 @@
 
 for (int i = 0; i < 10; i++)
 {
-  Console.WriteLine("Love u Gaby!! :) ");
-
+  Console.WriteLine("Repositorio hecho, subiendo commit ");
 }

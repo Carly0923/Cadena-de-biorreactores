@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Types
 {
+  /// <summary> Definiendo etapas del crecimiento microbiano porque aquí si se aprendió ing genética </summary>
   public enum etapa_crecimiento_microbiano
   {
    #region

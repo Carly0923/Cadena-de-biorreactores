@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Dominio_Fermentación.Common;
+using Dominio_Fermentación.Rules;
+using Dominio_Fermentación.Types;
 
 namespace Dominio_Fermentación.Entities
 {
@@ -27,7 +30,6 @@ namespace Dominio_Fermentación.Entities
       /// Chequear que la parte derecha sea solo números
        if (int.TryParse(derecha_parte_codigo, out int result))
           throw new ArgumentException("La parte derecha del código del equipo debe contoner solo números");
-            
       Valor = valor;
      }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Types
 {
-  /// <summary> Enumera los posibles estados de funcionamiento de los equipos.
+  /// <summary> Enumera los posibles estados de funcionamiento de los equipos. Se la copié a Hernan jajaja.
   public enum Estado_equipo
   {
    #region
