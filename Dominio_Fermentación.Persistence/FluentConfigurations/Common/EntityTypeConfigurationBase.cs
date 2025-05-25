@@ -4,6 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dominio_Fermentación.Persistence.FluentConfigurations.Common
 {
+    /// <summary>
+    /// Necesario para trabajar con los Entity creados en el Domain
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class EntityTypeConfigurationBase<T>
         : IEntityTypeConfiguration<T>
         where T : Entity

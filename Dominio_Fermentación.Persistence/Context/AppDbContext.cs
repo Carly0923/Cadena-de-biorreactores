@@ -18,6 +18,9 @@ namespace Dominio_Fermentación.Persistence.Context
         DbSet<Variable> Variables => Set<Variable>();
         DbSet<Comunication_Node> Comunication_Nodes => Set<Comunication_Node>();
         DbSet<Id_unidad> Id_unidads => Set<Id_unidad>();
+        DbSet<Batch> Batchs => Set<Batch>();
+        DbSet<>
+
 
         #endregion
 

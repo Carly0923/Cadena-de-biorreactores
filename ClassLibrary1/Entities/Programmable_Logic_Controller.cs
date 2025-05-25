@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
+//using EquipmentMonitoring.Domain.Errors;
+//using EquipmentMonitoring.Domain.ValueObjects;
+//using FluentResults;
 
 namespace Dominio_Fermentación.Entities
 {
-  public class Programmable_Logic_Controller
+  public abstract class Programmable_Logic_Controller
+        : Entity, IStateful_Equipment
   {
    #region Propiedades
    /// <summary> Número de identificación del PLC </summary>
@@ -24,6 +28,7 @@ namespace Dominio_Fermentación.Entities
    #endregion
    ///<summary> Constructor </summary>
     public Programmable_Logic_Controller(Id_unidad id_number, string ip_address)
+            
     {
      Id_PLC = id_number;
      IP_Address = ip_address;
