@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using Dominio_Fermentación.Types;
 using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Entities;
+using Dominio_Fermentación.Common;
+
 
 namespace Dominio_Fermentación.Entities
 {
   public class Variable
+        //: Entity
   {
    #region Properties
    /// <summary> Entidad numérica que después debe ser acompañada por la unidad de medida </summary>
