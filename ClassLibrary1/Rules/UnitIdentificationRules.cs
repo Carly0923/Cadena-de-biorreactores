@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentResults;
+using Dominio_Fermentación.Errors;
+using System.Text.RegularExpressions;
+using Dominio_Fermentación.ValueObjects;
 
 ///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules
@@ -18,5 +21,31 @@ namespace Dominio_Fermentación.Rules
             
      return Result.Ok ();
    }
-  }
+        public record CodeMustStartWithLetters(
+        string Value)
+        : IBussiness_Rules
+        {
+            public Result CheckRule()
+            {
+                if (!Regex.IsMatch(Value.Split('-')[0], @"^[a-zA-Z]+$"))
+                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotStartsWithLetters);
+                return Result.Ok();
+            }
+        }
+
+        public record CodeMustEndWithNumbers(
+            string Value)
+            : IBussiness_Rules
+        {
+            public Result CheckRule()
+            {
+                if (int.TryParse(Value.Split('-')[0], out int result))
+                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
+                return Result.Ok();
+            }
+        }
+
+
+    }
+
 }

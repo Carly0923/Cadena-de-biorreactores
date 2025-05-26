@@ -8,19 +8,19 @@ using FluentResults;
 
 namespace Dominio_Fermentación.Entities.Abstract
 {
-  public interface IStateful_Equipment
-  { 
-   Estado_equipo Estado { get; }
+    public interface IStatefulEquipment
+    {
+        Estado_equipo Estado { get; }
         /// <summary>
         /// Reemplazo de void por Result
         /// </summary>
         /// <returns></returns>
-    Result GetintoFault();
+        Result GetintoFault();
         /// <summary>
         /// Result se utiliza para el Patrón Resulatdo
         /// </summary>
         /// <returns></returns>
-    Result GetoutFault();
-     
-  }
+        Result GetoutFault();
+
+    }
 }

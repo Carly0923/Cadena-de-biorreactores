@@ -11,11 +11,11 @@ namespace Dominio_Fermentación.Types
   {
    #region
    /// <summary> En espera de ejecución.
-   Iddle,
+   Idle,
    /// <summary> En ejecución.
    Executing,
    /// <summary> En estado de fallo.
-   Faulted,
+   Faulted
    #endregion
   }
 }

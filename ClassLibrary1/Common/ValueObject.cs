@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Dominio_Fermentación.Common
 {
     public abstract class ValueObject
+        :CheckableObject
     {
+        protected ValueObject() { }
         protected static bool EqualOperator(ValueObject left, ValueObject right) 
         { 
          if(left is null ^ right is null)

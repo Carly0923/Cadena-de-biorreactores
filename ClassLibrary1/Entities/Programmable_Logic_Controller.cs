@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
-//using EquipmentMonitoring.Domain.Errors;
-//using EquipmentMonitoring.Domain.ValueObjects;
+using Dominio_Fermentación.Errors;
+using Dominio_Fermentación.ValueObjects;
 using FluentResults;
+using System.Collections;
+using System.Net;
 
 namespace Dominio_Fermentación.Entities
 {
   public abstract class Programmable_Logic_Controller
-        : Entity, IStateful_Equipment
-  {
+        : Entity
+    {
    #region Propiedades
    /// <summary> Número de identificación del PLC </summary>
    public Id_unidad Id_PLC { get; set; }
@@ -27,11 +29,54 @@ namespace Dominio_Fermentación.Entities
    public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
    #endregion
    ///<summary> Constructor </summary>
-    public Programmable_Logic_Controller(Id_unidad id_number, string ip_address)
+   protected Programmable_Logic_Controller() 
+        {
+        }
+   public Programmable_Logic_Controller(Id_unidad id_number, string ip_address)
             
     {
      Id_PLC = id_number;
      IP_Address = ip_address;
     }
-  }
+        public Programmable_Logic_Controller(
+    Guid id,
+    Network_Address address,
+    Estado_equipo state)
+    : base(id, address, state)
+        {
+            Address = address;
+            State = state;
+        }
+
+        /// <summary>
+        /// Lleva al dispositivo a un estado de falla.
+        /// </summary>
+        /// <exception cref="InvalidOperationException"></exception>
+        public Result GetIntoFaultState()
+        {
+            var result = CheckRules(
+                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address));
+            if (result.IsFailed)
+                return result;
+
+            State = Estado_equipo.Faulted;
+            return Result.Ok();
+        }
+
+        /// <summary>
+        /// Saca el dispositivo del estado de falla.
+        /// </summary>
+        /// <exception cref="InvalidOperationException"></exception>
+        public Result GetOutOfFaultState()
+        {
+            var result = CheckRules(
+                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(State));
+            if (result.IsFailed)
+                return result;
+
+            State = Estado_equipo.Idle;
+            return Result.Ok();
+        }
+    }
+
 }
