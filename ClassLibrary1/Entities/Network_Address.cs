@@ -10,7 +10,7 @@ using Dominio_Fermentación.Entities.Abstract;
 
 namespace Dominio_Fermentación.Entities
 {
- internal class Network_Address
+ public class Network_Address
  {
   #region Propiedades
   /// <summary> Dirección IP </summary>

@@ -15,11 +15,10 @@ namespace Dominio_Fermentación.Entities
     /// <summary> Id de identificación del sensor </summary>
     public Id_unidad Id_sensor { get; set; }
     /// <summary> tipo de sensor </summary>
-    public Variable_medida variable_medida { get; private set; } = Variable_medida.temperature;
+    public Variable variable_medida { get; private set; }
     /// <summary> Estado de funcionamiento del sensor </summary>
     public Estado_equipo estado_equipo_sensor { get; set; } = Estado_equipo.Executing;
     /// <summary> variables que mide este sensor </summary>
-    public List<Variable> Variables { get; private set; }
     #endregion
     
     #region Methods

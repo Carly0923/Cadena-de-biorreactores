@@ -24,7 +24,7 @@ namespace Dominio_Fermentación.Entities
    /// <summary> La marca del PLC es un enumerado declarado en Types </summary>
    public Marca_PLC marca_PLC { get; set; } = Marca_PLC.S7_300;
    /// <summary> Dirección IP </summary>
-   public string IP_Address { get; set; }
+   public Network_Address IP_Address { get; set; }
    /// <summary> Estado de funcionamiento del PLC </summary>
    public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
    #endregion
