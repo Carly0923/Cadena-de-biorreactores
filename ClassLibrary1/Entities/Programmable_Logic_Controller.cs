@@ -32,12 +32,12 @@ namespace Dominio_Fermentación.Entities
    protected Programmable_Logic_Controller() 
         {
         }
-   public Programmable_Logic_Controller(Id_unidad id_number, string ip_address)
+   public Programmable_Logic_Controller(Id_unidad id_number, Network_Address ip_address)
             
     {
      Id_PLC = id_number;
      IP_Address = ip_address;
-    }
+   }
         public Programmable_Logic_Controller(
     Guid id,
     Network_Address address,

@@ -10,7 +10,7 @@ using Dominio_Fermentación.Types;
 namespace Dominio_Fermentación.Entities
 {
   public class Batch
-        :Entity
+    :Entity
   {
    #region Propiedades
    /// <summary> Identificador del lote producido </summary>

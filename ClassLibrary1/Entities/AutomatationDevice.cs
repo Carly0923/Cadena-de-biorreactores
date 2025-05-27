@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Entities
     /// Clase base para los dispositivos de automatización industrial.
     /// </summary>
     public abstract class AutomationDevice
-        : Entity, IStatefulEquipment
+        : Entity, IStatefulEquipment;
     {
 
         #region Properties
@@ -35,7 +35,7 @@ namespace Dominio_Fermentación.Entities
         /// <summary>
         /// Unidades asociadas a dispositivos de automatización.
         /// </summary>
-        public List<Unit> Units { get; private set; } = new();
+        public List<Programmable_Logic_Controller> ProgrammableLogicController { get; set; } = new();
 
         #endregion
 

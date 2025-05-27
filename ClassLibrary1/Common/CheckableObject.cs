@@ -15,7 +15,7 @@ namespace Dominio_Fermentación.Common
             List<Result> results = new List<Result>();
             foreach (var rule in Rules)
             {
-                results.Add(rule.CheckRule());
+              results.Add(rule.CheckRule());
             }
             return Result.Merge(results.ToArray());
         }

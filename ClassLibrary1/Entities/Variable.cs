@@ -25,7 +25,7 @@ namespace Dominio_Fermentación.Entities
 
    #region Metodos
    ///Constructor
-   public Variable(float number,unidades_medida_mostradas Unidad,Comunication_Node node)
+   public Variable(float number,Unidad_de_medida Unidad,Comunication_Node node)
    {
     Medicion = number;
     unidad = Unidad;

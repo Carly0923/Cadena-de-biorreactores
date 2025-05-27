@@ -9,7 +9,6 @@ namespace Dominio_Fermentación.Common
 {
    public interface IBussiness_Rules
    {
-        Result CheckRule(); 
-      
+        Result CheckRule();  
    }
 }

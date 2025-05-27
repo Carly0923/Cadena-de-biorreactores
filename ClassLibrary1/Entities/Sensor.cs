@@ -8,7 +8,7 @@ using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Entities.Abstract;
 
 namespace Dominio_Fermentación.Entities
- {
+{
    public class Sensor
    {
     #region Properties
