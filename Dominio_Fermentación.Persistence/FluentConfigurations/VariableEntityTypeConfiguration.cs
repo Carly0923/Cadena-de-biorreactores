@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Variables");
-            builder.OwnsOne(x => x.Medicion); //ValueObject
+            builder.OwnsOne(x => x.unidad); //ValueObject
             builder.OwnsOne(x => x.Node); //Falta implementar estas variables en el domain
         }
     }
