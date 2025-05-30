@@ -15,11 +15,12 @@ namespace Dominio_Fermentación.Persistence.Context
         : DbContext
     {
         #region Tablas
-        DbSet<Variable> Variables => Set<Variable>();
-        DbSet<Comunication_Node> Comunication_Nodes => Set<Comunication_Node>();
-        DbSet<Id_unidad> Id_unidads => Set<Id_unidad>();
-        DbSet<Batch> Batchs => Set<Batch>();
-       
+        public DbSet<Variable> Variables => Set<Variable>();
+        public DbSet<Comunication_Node> Comunication_Nodes => Set<Comunication_Node>();
+        public DbSet<Id_unidad> Id_unidads => Set<Id_unidad>();
+        public DbSet<Batch> Batchs => Set<Batch>();
+        //public DbSet<EquipmentStateChangeRecord> EquipmentStateChangeRecords => Set<EquipmentStateChangeRecord>();
+
 
 
         #endregion
@@ -69,7 +70,7 @@ namespace Dominio_Fermentación.Persistence.Context
 
         private static DbContextOptions GetOptions(string connectionString)
         {
-            return new DbContextOptionsBuilder().UseNpgsql(connectionString).Options;
+            return NpgsqlDbContextOptionsBuilderExtensions.UseNpgsql(new DbContextOptionsBuilder(), connectionString).Options;
         }
 
         #endregion
