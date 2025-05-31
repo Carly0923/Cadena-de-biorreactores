@@ -3,7 +3,6 @@ using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Errors;
 using Dominio_Fermentación.Types;
-using Dominio_Fermentación.ValueObjects;
 using FluentResults;
 using System;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace Dominio_Fermentación.Entities
     /// Clase base para los dispositivos de automatización industrial.
     /// </summary>
     public abstract class AutomationDevice
-        : Entity, IStatefulEquipment;
+        : Entity, IStatefulEquipment
     {
 
         #region Properties
@@ -37,15 +36,9 @@ namespace Dominio_Fermentación.Entities
         /// </summary>
         public List<Programmable_Logic_Controller> ProgrammableLogicController { get; set; } = new();
 
+        public Estado_equipo Estado => throw new NotImplementedException();
+
         #endregion
-
-        /// <summary>
-        /// Requerido por EF.
-        /// </summary>
-        protected AutomationDevice()
-        {
-
-        }
 
         public AutomationDevice(
             Guid id,
@@ -87,6 +80,14 @@ namespace Dominio_Fermentación.Entities
             return Result.Ok();
         }
 
+        public Result GetintoFault()
+        {
+            throw new NotImplementedException();
+        }
 
+        public Result GetoutFault()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

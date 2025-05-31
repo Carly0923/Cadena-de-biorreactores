@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using FluentResults;
 using Dominio_Fermentación.Errors;
 using System.Text.RegularExpressions;
-using Dominio_Fermentación.ValueObjects;
 
 ///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules

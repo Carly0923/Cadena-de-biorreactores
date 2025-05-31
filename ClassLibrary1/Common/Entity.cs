@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Dominio_Fermentación.Common
 {
   public abstract class Entity
-        :CheckableObject
+   :CheckableObject
   {
    #region Properties
    public Guid Id { get; set; }
@@ -15,6 +15,7 @@ namespace Dominio_Fermentación.Common
    protected Entity(Guid id)
    {
     Id = id;
+    /// datos batch y datos automation device, variables
    }
 
   }

@@ -8,11 +8,11 @@ using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Errors;
-using Dominio_Fermentación.ValueObjects;
 using FluentResults;
 using System.Collections;
 using System.Net;
 
+/// No es necesario usar el namespace del value object, por eso lo quite
 namespace Dominio_Fermentación.Entities
 {
   public abstract class Programmable_Logic_Controller
@@ -29,12 +29,8 @@ namespace Dominio_Fermentación.Entities
    public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
    #endregion
    ///<summary> Constructor </summary>
-   protected Programmable_Logic_Controller() 
-        {
-        }
-   public Programmable_Logic_Controller(Id_unidad id_number, Network_Address ip_address)
-            
-    {
+   public Programmable_Logic_Controller(Id_unidad id_number, Network_Address ip_address, Guid id) : base(id)
+   {
      Id_PLC = id_number;
      IP_Address = ip_address;
    }
