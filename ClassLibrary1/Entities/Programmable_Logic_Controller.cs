@@ -34,16 +34,6 @@ namespace Dominio_Fermentación.Entities
      Id_PLC = id_number;
      IP_Address = ip_address;
    }
-        public Programmable_Logic_Controller(
-    Guid id,
-    Network_Address address,
-    Estado_equipo state)
-    : base(id, address, state)
-        {
-            Address = address;
-            State = state;
-        }
-
         /// <summary>
         /// Lleva al dispositivo a un estado de falla.
         /// </summary>
@@ -51,11 +41,11 @@ namespace Dominio_Fermentación.Entities
         public Result GetIntoFaultState()
         {
             var result = CheckRules(
-                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address));
+                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(estado_equipo_PLC));
             if (result.IsFailed)
                 return result;
 
-            State = Estado_equipo.Faulted;
+            estado_equipo_PLC = Estado_equipo.Faulted;
             return Result.Ok();
         }
 
@@ -66,11 +56,11 @@ namespace Dominio_Fermentación.Entities
         public Result GetOutOfFaultState()
         {
             var result = CheckRules(
-                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(State));
+                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(estado_equipo_PLC));
             if (result.IsFailed)
                 return result;
 
-            State = Estado_equipo.Idle;
+            estado_equipo_PLC = Estado_equipo.Idle;
             return Result.Ok();
         }
     }
