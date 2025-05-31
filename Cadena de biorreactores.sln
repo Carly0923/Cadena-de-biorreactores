@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación", "Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación.Persistence", "Dominio_Fermentación.Persistence\Dominio_Fermentación.Persistence.csproj", "{44CDDA83-D5C9-4EFD-BBB3-CCF92BD1311D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{1259016B-FF7A-40CD-AAE4-CEEDA15DCB5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csproj", "{1259016B-FF7A-40CD-AAE4-CEEDA15DCB5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio_Fermentación.Contracts", "Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj", "{14AC29BB-85DD-4F6C-AE07-D14F640410C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1259016B-FF7A-40CD-AAE4-CEEDA15DCB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1259016B-FF7A-40CD-AAE4-CEEDA15DCB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1259016B-FF7A-40CD-AAE4-CEEDA15DCB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AC29BB-85DD-4F6C-AE07-D14F640410C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AC29BB-85DD-4F6C-AE07-D14F640410C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AC29BB-85DD-4F6C-AE07-D14F640410C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AC29BB-85DD-4F6C-AE07-D14F640410C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

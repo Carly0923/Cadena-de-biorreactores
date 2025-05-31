@@ -2,7 +2,7 @@
 using Dominio_Fermentación.Types;
 using Dominio_Fermentación.ValueObjects;
 using Dominio_Fermentación.Persistence.Context;
-using Dominio_Fermentación.Persistence.Repositories.Managers;
+//using Dominio_Fermentación.Persistence.Repositories.Managers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dominio_Fermentación.Console
@@ -15,29 +15,29 @@ namespace Dominio_Fermentación.Console
                 "User ID =postgres;Password=qwerty;Server=localhost;Port=5432;" +
                 "Database=EquipmentMonitoringDB;Include Error Detail=true;");
 
-            AppRepositoryManager repositoryManager = new AppRepositoryManager(appDbContext);
+            //AppRepositoryManager repositoryManager = new AppRepositoryManager(appDbContext);
 
-            var unit = new Unit(Guid.NewGuid(), "Unidad1", UnitIdentificationCode.Create("uni-123").Value!);
-            var task = repositoryManager.Unit.AddAsync(unit);
-            task.Wait();
+            //var unit = new Unit(Guid.NewGuid(), "Unidad1", UnitIdentificationCode.Create("uni-123").Value!);
+            //var task = repositoryManager.Unit.AddAsync(unit);
+            //task.Wait();
 
-            var variableId = Guid.NewGuid();
-            task = repositoryManager.Variable.AddAsync(
-                new Variable(
-                    variableId,
-                    unit.Id,
-                    "Variable1",
-                    new MeasurementUnit(PhysicalMagnitude.Temperature, "°C"),
-                    new CommunicationNode(1, 2)));
-            task.Wait();
+            //var variableId = Guid.NewGuid();
+            //task = repositoryManager.Variable.AddAsync(
+            //    new Variable(
+            //        variableId,
+            //        unit.Id,
+            //        "Variable1",
+            //        new MeasurementUnit(PhysicalMagnitude.Temperature, "°C"),
+            //        new CommunicationNode(1, 2)));
+            //task.Wait();
 
-            task = repositoryManager.UnitOfWork.SaveChangesAsync(new CancellationToken());
+            //task = repositoryManager.UnitOfWork.SaveChangesAsync(new CancellationToken());
 
-            task.Wait();
+            //task.Wait();
 
-            task = repositoryManager.Variable.GetByIdAsync(variableId);
+            //task = repositoryManager.Variable.GetByIdAsync(variableId);
 
-            task.Wait();
+            //task.Wait();
         }
     }
 }
