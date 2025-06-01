@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dominio_Fermentación.Console\" />
+    <Compile Remove="Dominio_Fermentación.Console\**" />
+    <EmbeddedResource Remove="Dominio_Fermentación.Console\**" />
+    <None Remove="Dominio_Fermentación.Console\**" />
   </ItemGroup>
 
   <ItemGroup>
