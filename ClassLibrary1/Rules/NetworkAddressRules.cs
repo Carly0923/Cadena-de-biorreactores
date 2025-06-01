@@ -3,7 +3,7 @@ using Dominio_Fermentación.Errors;
 using FluentResults;
 using Dominio_Fermentación.Types;
 
-namespace EquipmentMonitoring.Domain.Rules
+namespace Dominio_Fermentación.Rules
 {
     public record IPAddressMustHaveFourSeparators(string IPAddress)
      : IBussiness_Rules

@@ -1,50 +1,51 @@
-﻿using Dominio_Fermentación.Common;
+﻿using Dominio_Fermentación.Entities;
+using Dominio_Fermentación.Errors;
+using Dominio_Fermentación.Common;
+using FluentResults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FluentResults;
-using Dominio_Fermentación.Errors;
-using System.Text.RegularExpressions;
+using Dominio_Fermentación.Types;
 
-///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules
 {
-    public record CodeMustHaveSeparators(string valor) : IBussiness_Rules
+    //Falta crear una entidad Operation
+    public record UnitCannotExecuteExternalOperation(
+       Operation TargetOperation,
+       IEnumerable<Operation> InternalOperations)
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
-            if (!valor.Contains("-"))
-                return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotHaveSeparator);
-
+            if (!InternalOperations.Contains(TargetOperation))
+                return Result.Fail(UnitErrors.CannotExecuteExternalOperation);
             return Result.Ok();
         }
-        public record CodeMustStartWithLetters(
-        string Value)
-        : IBussiness_Rules
-        {
-            public Result CheckRule()
-            {
-                if (!Regex.IsMatch(Value.Split('-')[0], @"^[a-zA-Z]+$"))
-                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotStartsWithLetters);
-                return Result.Ok();
-            }
-        }
-
-        public record CodeMustEndWithNumbers(
-            string Value)
-            : IBussiness_Rules
-        {
-            public Result CheckRule()
-            {
-                if (int.TryParse(Value.Split('-')[0], out int result))
-                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
-                return Result.Ok();
-            }
-        }
-
-
     }
 
+    public record UnitCannotExecuteOperationIfNotInIdleState(
+        Estado_equipo CurrentState)
+       : IBussiness_Rules
+    {
+        public Result CheckRule()
+        {
+            if (CurrentState != Estado_equipo.Idle)
+                return Result.Fail(UnitErrors.CannotExecuteOperationIfNotIdle);
+            return Result.Ok();
+        }
+    }
+
+    public record UnitCannotStopOperationIfItsNotExecutingAny(
+        Estado_equipo CurrentState)
+       : IBussiness_Rules
+    {
+        public Result CheckRule()
+        {
+            if (CurrentState != Estado_equipo.Executing)
+                return Result.Fail(UnitErrors.CannotStopIfNotExecuting);
+            return Result.Ok();
+        }
+    }
 }

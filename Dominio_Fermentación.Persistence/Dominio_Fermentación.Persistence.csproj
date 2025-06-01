@@ -16,11 +16,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\Dominio_Fermentación.csproj" />
+    <ProjectReference Include="..\Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
