@@ -1,5 +1,5 @@
-﻿using Dominio_Fermentación.Entities;
-using Dominio_Fermentación.Persistence.FluentConfigurations.Common;
+﻿using Dominio_Fermentación.Persistence.FluentConfigurations.Common;
+using Dominio_Fermentación.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
