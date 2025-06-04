@@ -15,7 +15,6 @@ namespace Dominio_Fermentación.Common
    protected Entity(Guid id)
    {
     Id = id;
-    /// datos batch y datos automation device, variables
    }
 
   }

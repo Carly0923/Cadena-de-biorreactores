@@ -11,11 +11,11 @@ using Dominio_Fermentación.Types;
 
 namespace Dominio_Fermentación.Rules
 {
-
+    ///Arreglar y agregar luego Operationy UnitErrors
     public record UnitCannotExecuteExternalOperation(
        Operation TargetOperation,
        IEnumerable<Operation> InternalOperations)
-       : IBusinessRule
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
@@ -26,24 +26,24 @@ namespace Dominio_Fermentación.Rules
     }
 
     public record UnitCannotExecuteOperationIfNotInIdleState(
-        EquipmentState CurrentState)
-       : IBusinessRule
+        Estado_equipo CurrentState)
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
-            if (CurrentState != EquipmentState.Idle)
+            if (CurrentState != Estado_equipo.Idle)
                 return Result.Fail(UnitErrors.CannotExecuteOperationIfNotIdle);
             return Result.Ok();
         }
     }
 
     public record UnitCannotStopOperationIfItsNotExecutingAny(
-        EquipmentState CurrentState)
-       : IBusinessRule
+        Estado_equipo CurrentState)
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
-            if (CurrentState != EquipmentState.Executing)
+            if (CurrentState != Estado_equipo.Executing)
                 return Result.Fail(UnitErrors.CannotStopIfNotExecuting);
             return Result.Ok();
         }

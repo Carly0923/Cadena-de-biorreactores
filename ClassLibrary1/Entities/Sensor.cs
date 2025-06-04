@@ -15,7 +15,7 @@ namespace Dominio_Fermentación.Entities
     /// <summary> Id de identificación del sensor </summary>
     public Id_unidad Id_sensor { get; set; }
     /// <summary> tipo de sensor </summary>
-    public Variable variable_medida { get; private set; }
+    public Variable variable_medida { get; set; }
     /// <summary> Estado de funcionamiento del sensor </summary>
     public Estado_equipo estado_equipo_sensor { get; set; } = Estado_equipo.Executing;
     /// <summary> variables que mide este sensor </summary>
