@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Dominio_Fermentación.API": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5167;https://localhost:7247",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

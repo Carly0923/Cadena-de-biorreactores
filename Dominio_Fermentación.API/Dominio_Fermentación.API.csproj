@@ -1,19 +1,25 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\Dominio_Fermentación.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.API\Dominio_Fermentación.API.csproj" />
     <ProjectReference Include="..\Dominio_Fermentación.Application\Dominio_Fermentación.Application.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj" />
     <ProjectReference Include="..\Dominio_Fermentación.GrpcProtos\Dominio_Fermentación.GrpcProtos.csproj" />
     <ProjectReference Include="..\Dominio_Fermentación.Persistence\Dominio_Fermentación.Persistence.csproj" />
   </ItemGroup>
+
 
 </Project>
