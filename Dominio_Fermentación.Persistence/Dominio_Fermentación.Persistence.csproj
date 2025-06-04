@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

@@ -12,18 +12,18 @@ using Dominio_Fermentación.Types;
 namespace Dominio_Fermentación.Rules
 {
     //Falta crear una entidad Operation
-    public record UnitCannotExecuteExternalOperation(
-       Operation TargetOperation,
-       IEnumerable<Operation> InternalOperations)
-       : IBussiness_Rules
-    {
-        public Result CheckRule()
-        {
-            if (!InternalOperations.Contains(TargetOperation))
-                return Result.Fail(UnitErrors.CannotExecuteExternalOperation);
-            return Result.Ok();
-        }
-    }
+    //public record UnitCannotExecuteExternalOperation(
+    //   Operation TargetOperation,
+    //   IEnumerable<Operation> InternalOperations)
+    //   : IBussiness_Rules
+    //{
+    //    public Result CheckRule()
+    //    {
+    //        if (!InternalOperations.Contains(TargetOperation))
+    //            return Result.Fail(UnitErrors.CannotExecuteExternalOperation);
+    //        return Result.Ok();
+    //    }
+    //}
 
     public record UnitCannotExecuteOperationIfNotInIdleState(
         Estado_equipo CurrentState)

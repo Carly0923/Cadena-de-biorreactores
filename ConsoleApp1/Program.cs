@@ -2,7 +2,7 @@
 using Dominio_Fermentación.Types;
 using Dominio_Fermentación.ValueObjects;
 using Dominio_Fermentación.Persistence.Context;
-//using Dominio_Fermentación.Persistence.Repositories.Managers;
+using Dominio_Fermentación.Persistence.Repositories.Managers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dominio_Fermentación.Console
@@ -14,6 +14,7 @@ namespace Dominio_Fermentación.Console
             AppDbContext appDbContext = new AppDbContext(
                 "User ID =postgres;Password=qwerty;Server=localhost;Port=5432;" +
                 "Database=EquipmentMonitoringDB;Include Error Detail=true;");
+            //appDbContext.Database.EnsureCreated();
 
             //AppRepositoryManager repositoryManager = new AppRepositoryManager(appDbContext);
 
