@@ -12,54 +12,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Entities
-{
-    /// <summary>
-    /// Clase base para los dispositivos de automatización industrial.
-    /// </summary>
+{ 
+    /// <summary> Clase base para los dispositivos de automatización industrial.  </summary>
     public abstract class AutomationDevice
         : Entity, IStatefulEquipment
     {
 
         #region Properties
-
-        /// <summary>
-        /// Dirección IP del dispositivo en la red.
-        /// </summary>
+        /// <summary> Dirección IP del dispositivo en la red. </summary>
         public Network_Address Address { get; set; }
 
-        /// <summary>
-        /// Estado actual del dispositivo.
-        /// </summary>
+        /// <summary> Estado actual del dispositivo. </summary>
         public Estado_equipo State { get; private set; }
+        /// <summary> Unidades asociadas a dispositivos de automatización. </summary>
 
-        /// <summary>
-        /// Unidades asociadas a dispositivos de automatización.
-        /// </summary>
-        public List<Unit> Units { get; private set; } = new();
-
+        public List<Unidad> Units { get; private set; } = new();
         #endregion
 
-        /// <summary>
-        /// Requerido por EF.
-        /// </summary>
-        protected AutomationDevice()
+        #region Métodos
+        public AutomationDevice(Guid id, Network_Address address, Estado_equipo state) : base(id)
         {
-
+         Address = address;
+         State = state;
         }
-
-        public AutomationDevice(
-            Guid id,
-            Network_Address address,
-            Estado_equipo state)
-            : base(id)
-        {
-            Address = address;
-            State = state;
-        }
-
-        /// <summary>
-        /// Lleva al dispositivo a un estado de falla.
-        /// </summary>
+        /// <summary> Lleva al dispositivo a un estado de falla </summary>
         /// <exception cref="InvalidOperationException"></exception>
         public Result GetIntoFaultState()
         {
@@ -72,9 +48,7 @@ namespace Dominio_Fermentación.Entities
             return Result.Ok();
         }
 
-        /// <summary>
-        /// Saca el dispositivo del estado de falla.
-        /// </summary>
+        /// <summary> Saca el dispositivo del estado de falla. </summary>
         /// <exception cref="InvalidOperationException"></exception>
         public Result GetOutOfFaultState()
         {
@@ -86,7 +60,6 @@ namespace Dominio_Fermentación.Entities
             State = Estado_equipo.Idle;
             return Result.Ok();
         }
-
-
+        #endregion
     }
 }

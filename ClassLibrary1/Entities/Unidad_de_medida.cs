@@ -18,17 +18,14 @@ namespace Dominio_Fermentación.Entities
      /// magnitud física
      public unidades_medida_mostradas Unidades_Medida { get; }
      #endregion
-/// <summary>
-/// Este debe ser el constructor
-/// </summary>
-/// <param name="Magnitud"></param>
-/// <param name="unidades_medida"></param>
-     public Unidad_de_medida(Variable_medida Magnitud,
-                             unidades_medida_mostradas unidades_medida)
-        {
-            Magnitud = magnitud;
-            unidades_medida = Unidades_Medida;
-        }
+
+     /// <param name="Magnitud"></param>
+     /// <param name="unidades_medida"></param>
+     public Unidad_de_medida(Variable_medida Magnitud, unidades_medida_mostradas unidades_medida)
+     {
+      Magnitud = magnitud;
+      unidades_medida = Unidades_Medida;
+     }
      
       protected override IEnumerable<object> GetEqualityComponents()
       {

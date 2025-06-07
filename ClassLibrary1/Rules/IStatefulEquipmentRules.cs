@@ -21,7 +21,6 @@ namespace Dominio_Fermentación.Rules
             return Result.Ok();
         }
     }
-
     public record EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(
         Estado_equipo CurrentState)
         : IBussiness_Rules

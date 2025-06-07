@@ -11,16 +11,9 @@ namespace Dominio_Fermentación.Entities.Abstract
     public interface IStatefulEquipment
     {
         Estado_equipo Estado { get; }
-        /// <summary>
-        /// Reemplazo de void por Result
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Reemplazo de void por Result </summary>
         Result GetintoFault();
-        /// <summary>
-        /// Result se utiliza para el Patrón Resulatdo
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Result se utiliza para el Patrón Resultado </summary>
         Result GetoutFault();
-
     }
 }

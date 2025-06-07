@@ -19,10 +19,6 @@ namespace Dominio_Fermentación.Common
             }
             return Result.Merge(results.ToArray());
         }
-    
-     
-
-
     }
 }
     

@@ -9,7 +9,6 @@ using Dominio_Fermentación.Errors;
 using System.Text.RegularExpressions;
 using Dominio_Fermentación.ValueObjects;
 
-///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules
 {
   public record CodeMustHaveSeparators (string valor) : IBussiness_Rules
@@ -33,19 +32,15 @@ namespace Dominio_Fermentación.Rules
             }
         }
 
-        public record CodeMustEndWithNumbers(
-            string Value)
-            : IBussiness_Rules
+        public record CodeMustEndWithNumbers(string Value)
+           : IBussiness_Rules
         {
-            public Result CheckRule()
-            {
-                if (int.TryParse(Value.Split('-')[0], out int result))
-                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
-                return Result.Ok();
-            }
+          public Result CheckRule()
+          {
+              if (int.TryParse(Value.Split('-')[0], out int result))
+                  return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
+              return Result.Ok();
+          }
         }
-
-
-    }
-
+  }
 }

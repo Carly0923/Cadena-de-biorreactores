@@ -16,7 +16,5 @@ namespace Dominio_Fermentación.Common
    {
     Id = id;
    }
-
   }
-  
 }

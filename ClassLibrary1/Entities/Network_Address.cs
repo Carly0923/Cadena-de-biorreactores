@@ -39,6 +39,11 @@ namespace Dominio_Fermentación.Entities
    Direccion_IP= direccion_IP;
    Direccion_Puerto= direccion_Puerto;
   }
-  #endregion
- }
+
+        public static implicit operator Network_Address(string v)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+    }
 }
