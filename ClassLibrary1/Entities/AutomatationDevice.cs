@@ -54,15 +54,9 @@ namespace Dominio_Fermentación.Entities
 =======
         public List<Unit> Units { get; private set; } = new();
 
+        public Estado_equipo Estado => throw new NotImplementedException();
+
         #endregion
-
-        /// <summary>
-        /// Requerido por EF.
-        /// </summary>
-        protected AutomationDevice()
-        {
-
-        }
 
         public AutomationDevice(
             Guid id,

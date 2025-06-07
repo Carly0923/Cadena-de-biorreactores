@@ -15,7 +15,7 @@ namespace Dominio_Fermentación.Rules
     public record UnitCannotExecuteExternalOperation(
        Operation TargetOperation,
        IEnumerable<Operation> InternalOperations)
-       : Bussiness_Rules
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
@@ -27,7 +27,7 @@ namespace Dominio_Fermentación.Rules
 
     public record UnitCannotExecuteOperationIfNotInIdleState(
         Estado_equipo CurrentState)
-       : Bussiness_Rules
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {
@@ -39,7 +39,7 @@ namespace Dominio_Fermentación.Rules
 
     public record UnitCannotStopOperationIfItsNotExecutingAny(
         Estado_equipo CurrentState)
-       : Bussiness_Rules
+       : IBussiness_Rules
     {
         public Result CheckRule()
         {

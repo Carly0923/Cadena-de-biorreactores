@@ -8,10 +8,7 @@ using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Errors;
-<<<<<<< HEAD
-=======
 using Dominio_Fermentación.ValueObjects;
->>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
 using FluentResults;
 using System.Collections;
 using System.Net;
