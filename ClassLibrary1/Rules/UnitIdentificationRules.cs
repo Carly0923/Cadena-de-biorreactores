@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using FluentResults;
 using Dominio_Fermentación.Errors;
 using System.Text.RegularExpressions;
-using Dominio_Fermentación.ValueObjects;
 
+///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules
 {
-  public record CodeMustHaveSeparators (string valor) : IBussiness_Rules
+  public record CodeMustHaveSeparators (string valor) : Bussiness_Rules
   {
    public Result CheckRule()
    {
@@ -22,7 +22,7 @@ namespace Dominio_Fermentación.Rules
    }
         public record CodeMustStartWithLetters(
         string Value)
-        : IBussiness_Rules
+        : Bussiness_Rules
         {
             public Result CheckRule()
             {
@@ -32,15 +32,19 @@ namespace Dominio_Fermentación.Rules
             }
         }
 
-        public record CodeMustEndWithNumbers(string Value)
-           : IBussiness_Rules
+        public record CodeMustEndWithNumbers(
+            string Value)
+            : Bussiness_Rules
         {
-          public Result CheckRule()
-          {
-              if (int.TryParse(Value.Split('-')[0], out int result))
-                  return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
-              return Result.Ok();
-          }
+            public Result CheckRule()
+            {
+                if (int.TryParse(Value.Split('-')[0], out int result))
+                    return Result.Fail(UnitIdentificationCodeErrors.CodeDoesNotEndsWithNumbers);
+                return Result.Ok();
+            }
         }
-  }
+
+
+    }
+
 }

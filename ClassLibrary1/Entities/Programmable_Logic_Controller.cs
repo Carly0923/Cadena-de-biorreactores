@@ -1,12 +1,26 @@
 ﻿using Dominio_Fermentación.Types;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Dominio_Fermentación.Entities.Abstract;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
+using Dominio_Fermentación.Errors;
+<<<<<<< HEAD
+=======
+using Dominio_Fermentación.ValueObjects;
+>>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
 using FluentResults;
+using System.Collections;
+using System.Net;
 
+/// No es necesario usar el namespace del value object, por eso lo quite
 namespace Dominio_Fermentación.Entities
 {
   public abstract class Programmable_Logic_Controller
-     :AutomationDevice
+        : Entity
     {
    #region Propiedades
    /// <summary> Número de identificación del PLC </summary>
@@ -18,36 +32,54 @@ namespace Dominio_Fermentación.Entities
    /// <summary> Estado de funcionamiento del PLC </summary>
    public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
    #endregion
-
    ///<summary> Constructor </summary>
-    public Programmable_Logic_Controller( Guid id, Estado_equipo state, Network_Address address): base(id, address, state) 
-    {
-     IP_Address = address;
-     estado_equipo_PLC = state;
-     }
-      /// <summary> Lleva al dispositivo a un estado de falla. </summary>
-      /// <exception cref="InvalidOperationException"></exception>
-     public Result GetIntoFaultState()
-     {
+   public Programmable_Logic_Controller(Id_unidad id_number, Network_Address ip_address, Guid id) : base(id)
+   {
+     Id_PLC = id_number;
+     IP_Address = ip_address;
+ 
+        /// <summary> Lleva al dispositivo a un estado de falla. </summary>
+        /// <exception cref="InvalidOperationException"></exception>
+       public Result GetIntoFaultState()
+        {
             var result = CheckRules(
-                     new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address);
+<<<<<<< HEAD
+                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(estado_equipo_PLC));
             if (result.IsFailed)
                 return result;
+
             estado_equipo_PLC = Estado_equipo.Faulted;
+=======
+                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address));
+            if (result.IsFailed)
+                return result;
+
+            State = Estado_equipo.Faulted;
+>>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
             return Result.Ok();
         }
 
-        /// <summary> Saca el dispositivo del estado de falla. </summary>
+        /// <summary>
+        /// Saca el dispositivo del estado de falla.
+        /// </summary>
         /// <exception cref="InvalidOperationException"></exception>
         public Result GetOutOfFaultState()
         {
-         var result = CheckRules(
-             new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(estado_equipo_PLC));
-         if (result.IsFailed)
-             return result;
+            var result = CheckRules(
+<<<<<<< HEAD
+                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(estado_equipo_PLC));
+            if (result.IsFailed)
+                return result;
 
-         estado_equipo_PLC = Estado_equipo.Idle;
-         return Result.Ok();
+            estado_equipo_PLC = Estado_equipo.Idle;
+=======
+                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(State));
+            if (result.IsFailed)
+                return result;
+
+            State = Estado_equipo.Idle;
+>>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
+            return Result.Ok();
         }
     }
 

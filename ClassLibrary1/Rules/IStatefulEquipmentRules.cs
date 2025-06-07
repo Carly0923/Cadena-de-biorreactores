@@ -12,7 +12,7 @@ namespace Dominio_Fermentación.Rules
 {
     public record EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(
         Estado_equipo CurrentState)
-        : IBussiness_Rules
+        : Bussiness_Rules
     {
         public Result CheckRule()
         {
@@ -21,9 +21,10 @@ namespace Dominio_Fermentación.Rules
             return Result.Ok();
         }
     }
+
     public record EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(
         Estado_equipo CurrentState)
-        : IBussiness_Rules
+        : Bussiness_Rules
     {
         public Result CheckRule()
         {

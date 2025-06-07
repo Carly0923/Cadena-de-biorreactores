@@ -10,7 +10,11 @@ using Dominio_Fermentación.Types;
 namespace Dominio_Fermentación.Entities
 {
   public class Batch
-   :Entity
+<<<<<<< HEAD
+    :Entity
+=======
+        :Entity
+>>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
   {
    #region Propiedades
    /// <summary> Identificador del lote producido </summary>
@@ -26,9 +30,13 @@ namespace Dominio_Fermentación.Entities
    #endregion
    /// Métodos
    /// Constructor
-    public Batch(Id_unidad id_batch, DateTime inicio, DateTime final) : base(id)
+<<<<<<< HEAD
+    public Batch(Id_unidad id_batch, DateTime inicio, DateTime final, Guid id) : base(id)
+=======
+    public Batch(Id_unidad id_batch, DateTime inicio, DateTime final)
+>>>>>>> parent of d1293e5 (Arreglar CheckableObject, IStatefulEquipment, Automation Device, Batch, Network Address, PLC y IStatefulEquipmentErrors.)
     {
-     #region 
+     #region Declaración
      Id_Batch = id_batch;
      Initial_Date = inicio;
      Final_Date = final;

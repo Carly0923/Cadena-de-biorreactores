@@ -10,15 +10,19 @@ namespace Dominio_Fermentación.Common
     public abstract class CheckableObject
     {
         protected CheckableObject() { }
-        protected static Result CheckRules(params IBussiness_Rules[] Rules) 
+        protected static Result CheckRules(params Bussiness_Rules[] Rules) 
         {
             List<Result> results = new List<Result>();
             foreach (var rule in Rules)
             {
-                results.Add(rule.CheckRule());
+              results.Add(rule.CheckRule());
             }
             return Result.Merge(results.ToArray());
         }
+    
+     
+
+
     }
 }
     

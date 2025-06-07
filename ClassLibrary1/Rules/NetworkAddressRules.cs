@@ -1,15 +1,12 @@
 ﻿using Dominio_Fermentación.Common;
+using Dominio_Fermentación.Errors;
 using FluentResults;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dominio_Fermentación.Types;
 
-namespace Dominio_Fermentación.Rules
+namespace EquipmentMonitoring.Domain.Rules
 {
-    public record IPAddressMustHaveFourSeparators(string IPAddress)
-        : IBussiness_Rules
+     public record IPAddressMustHaveFourSeparators(string IPAddress)
+      : Bussiness_Rules
     {
         public Result CheckRule()
         {
@@ -18,9 +15,10 @@ namespace Dominio_Fermentación.Rules
             return Result.Ok();
         }
     }
+
     public record IPAddressMustHaveValidValues(
         string IPAddress)
-        : IBussiness_Rules
+        : IBusinessRule
     {
         public Result CheckRule()
         {
@@ -38,7 +36,7 @@ namespace Dominio_Fermentación.Rules
 
     public record PortMustBeInAValidRange(
         int Port)
-       : IBussiness_Rules
+       : IBusinessRule
     {
         public Result CheckRule()
         {

@@ -12,7 +12,7 @@ using Dominio_Fermentación.Common;
 namespace Dominio_Fermentación.Entities
 {
   public class Variable
-   : Entity
+        : Entity
   {
    #region Properties
    /// <summary> Entidad numérica que después debe ser acompañada por la unidad de medida </summary>
@@ -25,7 +25,7 @@ namespace Dominio_Fermentación.Entities
 
    #region Metodos
    ///Constructor
-   public Variable(Guid id, float number,Unidad_de_medida Unidad,Comunication_Node node): base(id)
+   public Variable(float number,Unidad_de_medida Unidad,Comunication_Node node, Guid id) : base(id)
    {
     Medicion = number;
     unidad = Unidad;

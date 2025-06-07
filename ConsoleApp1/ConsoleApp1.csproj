@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,14 +6,5 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Dominio_Fermentación.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.API\Dominio_Fermentación.API.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.Application\Dominio_Fermentación.Application.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.GrpcProtos\Dominio_Fermentación.GrpcProtos.csproj" />
-    <ProjectReference Include="..\Dominio_Fermentación.Persistence\Dominio_Fermentación.Persistence.csproj" />
-  </ItemGroup>
 
 </Project>
