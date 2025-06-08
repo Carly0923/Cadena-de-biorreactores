@@ -37,7 +37,7 @@ namespace Dominio_Fermentación.Persistence.Repositories
         public async Task<IEnumerable<Variable>> GetVariablesByUnitAsync(Guid unitId)
         {
             //Ver que haremos con Units
-            var unit = await _context.Units
+            var unit = await _context.Unidad
                 .Include(u => u.Variables)
                 .FirstAsync(u => u.Id == unitId);
             return unit.Variables;
