@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visual"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="FERMAC 2.0" Height="450" Width="800">
+
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="65"/>
+            <RowDefinition  Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
+            <Canvas>
+                <Button Name="LoginButton" Content="Iniciar Sesión" Canvas.Left="673" Canvas.Top="10" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" Height="34" Width="93" Click="IS"/>
+            </Canvas>
+        </Border>
+
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Content="Gestión de Lotes" Width="auto" Height="auto" FontSize="25" Click="GL"/>
+            <Button Grid.Column="1" Grid.Row="0"/>
+            <Button Grid.Column="2" Grid.Row="0"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="Gestión de Usuarios" Width="auto" Height="auto" FontSize="25" Click="GU"/>
+            <Button Grid.Column="1" Grid.Row="1"/>
+            <Button Grid.Column="2" Grid.Row="2"/>
+
+        </Grid>
 
     </Grid>
 </Window>
