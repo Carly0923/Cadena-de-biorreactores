@@ -22,9 +22,9 @@
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
-                    <Canvas>
+                    <Grid>
                         <TextBlock Text="Lotes" FontSize="23" Foreground="White" VerticalAlignment="Top" Canvas.Left="92" Canvas.Top="3"  />
-                    </Canvas>
+                    </Grid>
                 </Border>
 
                 <Canvas Grid.Row="1">
@@ -34,11 +34,11 @@
                 </Canvas>
 
                 <Border Grid.Row="2" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
-                    <Canvas>
-                        <Button Content="Atras" Height="25" Width="55" Canvas.Left="10" Canvas.Top="5" Click="MW"/>
-                        <Button Content="Agregar" Height="25" Width="55" Canvas.Left="110" Canvas.Top="5" Click="AL"/>
-                        <Button Content="Quitar" Height="25" Width="55" Canvas.Left="175" Canvas.Top="5" Click="QL"/>
-                    </Canvas>
+                    <Grid>
+                        <Button Content="Atras" Height="25" Width="55" Canvas.Left="10" Canvas.Top="5" Click="MW" Margin="10,5,173,5"/>
+                        <Button Content="Agregar" Height="25" Width="55" Canvas.Left="110" Canvas.Top="5" Click="AL" Margin="113,5,70,5"/>
+                        <Button Content="Quitar" Height="25" Width="55" Canvas.Left="175" Canvas.Top="5" Click="QL" Margin="173,5,10,5"/>
+                    </Grid>
                 </Border>
 
 
@@ -56,9 +56,9 @@
             </Canvas>
 
             <Border Grid.Row="1" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
-                <Canvas>
-                    <Button Content="Modificar" Height="25" Width="65" Canvas.Left="450" Canvas.Top="5" Click="ML"/>
-                </Canvas>
+                <Grid>
+                    <Button Content="Modificar" Height="25" Width="65" Canvas.Left="450" Canvas.Top="5" Click="ML" Margin="454,5,21,5"/>
+                </Grid>
             </Border>
 
         </Grid>
