@@ -23,5 +23,20 @@ namespace Visual
         {
             InitializeComponent();
         }
+
+
+        private void AU(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No esta implementado");
+
+        }
+
+        private void QU(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No esta implementado");
+
+        }
+
+
     }
 }
