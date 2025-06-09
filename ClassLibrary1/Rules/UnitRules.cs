@@ -2,13 +2,8 @@
 using Dominio_Fermentación.Entities;
 using Dominio_Fermentación.Errors;
 using Dominio_Fermentación.Types;
-using EquipmentMonitoring.Domain.Entities;
 using FluentResults;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dominio_Fermentación.Rules
 {

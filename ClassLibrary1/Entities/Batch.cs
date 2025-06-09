@@ -26,7 +26,7 @@ namespace Dominio_Fermentación.Entities
    #endregion
    /// Métodos
    /// Constructor
-    public Batch(Id_unidad id_batch, DateTime inicio, DateTime final) : base(id)
+    public Batch(Id_unidad id_batch, DateTime inicio, DateTime final, Guid id) : base(id)
     {
      #region 
      Id_Batch = id_batch;

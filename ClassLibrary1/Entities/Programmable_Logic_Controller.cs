@@ -25,30 +25,5 @@ namespace Dominio_Fermentación.Entities
      IP_Address = address;
      estado_equipo_PLC = state;
      }
-      /// <summary> Lleva al dispositivo a un estado de falla. </summary>
-      /// <exception cref="InvalidOperationException"></exception>
-     public Result GetIntoFaultState()
-     {
-            var result = CheckRules(
-                     new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address);
-            if (result.IsFailed)
-                return result;
-            estado_equipo_PLC = Estado_equipo.Faulted;
-            return Result.Ok();
-        }
-
-        /// <summary> Saca el dispositivo del estado de falla. </summary>
-        /// <exception cref="InvalidOperationException"></exception>
-        public Result GetOutOfFaultState()
-        {
-         var result = CheckRules(
-             new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(estado_equipo_PLC));
-         if (result.IsFailed)
-             return result;
-
-         estado_equipo_PLC = Estado_equipo.Idle;
-         return Result.Ok();
-        }
-    }
-
+  }
 }

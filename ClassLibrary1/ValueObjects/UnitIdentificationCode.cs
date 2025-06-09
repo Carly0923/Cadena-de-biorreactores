@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using Dominio_Fermentación.Rules;
 using static Dominio_Fermentación.Rules.CodeMustHaveSeparators;
 
-namespace EquipmentMonitoring.Domain.ValueObjects
+namespace Dominio_Fermentación.ValueObjects
 {
     /// <summary> Código de identificación de una unidad. </summary>
     public class UnitIdentificationCode
@@ -27,7 +27,7 @@ namespace EquipmentMonitoring.Domain.ValueObjects
         public static Result<UnitIdentificationCode> Create(string value)
         {
             var result = CheckRules(
-                new CodeMustHaveSeparator(value));
+                new CodeMustHaveSeparators(value));
             if (result.IsFailed)
                 return result.ToResult<UnitIdentificationCode>();
 

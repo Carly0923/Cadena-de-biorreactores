@@ -5,7 +5,7 @@ using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Types;
 using FluentResults;
 using Microsoft.VisualBasic;
-
+using Dominio_Fermentación.ValueObjects;
 namespace Dominio_Fermentación.Entities
 {
     /// <summary> Modela un equipo automático. </summary>
@@ -72,7 +72,7 @@ namespace Dominio_Fermentación.Entities
         /// Lleva al equipo a un estado de falla.
         /// </summary>
         /// <exception cref="InvalidOperationException"></exception>
-        public Result GetIntoFaultState()
+        public Result GetintoFault()
         {
             var result = CheckRules(
                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(Estado));
@@ -90,7 +90,7 @@ namespace Dominio_Fermentación.Entities
         /// Saca el equipo de estado de falla.
         /// </summary>
         /// <exception cref="InvalidOperationException"></exception>
-        public Result GetOutOfFaultState()
+        public Result GetoutFault()
         {
             var result = CheckRules(
                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(Estado));

@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EquipmentMonitoring.Domain.Entities
+namespace Dominio_Fermentación.Entities
 {
  /// <summary> Modela la operación de un equipo automático. </summary>
    public class Operation

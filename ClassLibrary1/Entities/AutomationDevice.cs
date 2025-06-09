@@ -23,9 +23,8 @@ namespace Dominio_Fermentación.Entities
         public Network_Address Address { get; set; }
 
         /// <summary> Estado actual del dispositivo. </summary>
-        public Estado_equipo State { get; private set; }
+        public Estado_equipo Estado { get; private set; }
         /// <summary> Unidades asociadas a dispositivos de automatización. </summary>
-
         public List<Unidad> Units { get; private set; } = new();
         #endregion
 
@@ -33,31 +32,31 @@ namespace Dominio_Fermentación.Entities
         public AutomationDevice(Guid id, Network_Address address, Estado_equipo state) : base(id)
         {
          Address = address;
-         State = state;
+         Estado = state;
         }
         /// <summary> Lleva al dispositivo a un estado de falla </summary>
         /// <exception cref="InvalidOperationException"></exception>
-        public Result GetIntoFaultState()
+        public Result GetintoFault()
         {
             var result = CheckRules(
-                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(State));
+                new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(Estado));
             if (result.IsFailed)
                 return result;
 
-            State = Estado_equipo.Faulted;
+            Estado = Estado_equipo.Faulted;
             return Result.Ok();
         }
 
         /// <summary> Saca el dispositivo del estado de falla. </summary>
         /// <exception cref="InvalidOperationException"></exception>
-        public Result GetOutOfFaultState()
+        public Result GetoutFault()
         {
             var result = CheckRules(
-                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(State));
+                new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(Estado));
             if (result.IsFailed)
                 return result;
 
-            State = Estado_equipo.Idle;
+            Estado = Estado_equipo.Idle;
             return Result.Ok();
         }
         #endregion
