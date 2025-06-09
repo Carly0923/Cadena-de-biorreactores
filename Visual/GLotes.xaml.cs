@@ -23,5 +23,37 @@ namespace Visual
         {
             InitializeComponent();
         }
+
+        //Boton para retroceder a la vantana principal
+        private void MW(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
+
+        }
+
+
+        //Boton para añadir lote
+        private void AL(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No esta implementado");
+
+        }
+
+        //Boton para quitar lote
+        private void QL(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No esta implementado");
+
+        }
+
+        //Boton para modificar lote
+        private void ML(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No esta implementado");
+
+        }
+
     }
 }
