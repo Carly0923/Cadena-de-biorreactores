@@ -28,7 +28,9 @@
                 </Border>
 
                 <Canvas Grid.Row="1">
-
+                    <ListView>
+                        
+                    </ListView>
                 </Canvas>
 
                 <Border Grid.Row="2" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
