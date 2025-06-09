@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación", "Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación.Persistence", "Dominio_Fermentación.Persistence\Dominio_Fermentación.Persistence.csproj", "{44CDDA83-D5C9-4EFD-BBB3-CCF92BD1311D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio_Fermentación.Contracts", "Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj", "{14AC29BB-85DD-4F6C-AE07-D14F640410C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación.Contracts", "Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj", "{14AC29BB-85DD-4F6C-AE07-D14F640410C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
