@@ -10,10 +10,10 @@ namespace Dominio_Fermentación.Contracts.Repositories
         /// <summary>
         /// Añade un registro de cambio de estado a base de datos.
         /// </summary>
-        Task AddAsync(EquipmentStateChangeRecord record);
+        Task AddAsync(EquipmentStateChangeRecords record);
         /// <summary>
         /// Obtiene todos los registros de cambio de estado en un rango de fechas específico.
         /// </summary>
-        Task<IEnumerable<EquipmentStateChangeRecord>> GetEquipmentStateChangeRecords(DateTime start, DateTime end);
+        Task<IEnumerable<EquipmentStateChangeRecords>> GetEquipmentStateChangeRecords(DateTime start, DateTime end);
     }
 }

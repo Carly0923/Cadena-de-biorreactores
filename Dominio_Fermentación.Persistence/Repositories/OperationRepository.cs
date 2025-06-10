@@ -41,7 +41,7 @@ namespace Dominio_Fermentación.Persistence.Repositories
 
         public async Task<IEnumerable<Operation>> GetOperationsByUnitAsync(Guid unitId)
         {
-            var unit = await _context.Units.Include(u => u.Operations).FirstAsync(u => u.Id == unitId);
+            var unit = await _context.Unidades.Include(u => u.Operations).FirstAsync(u => u.Id == unitId);
             return unit.Operations;
         }
 
@@ -50,11 +50,4 @@ namespace Dominio_Fermentación.Persistence.Repositories
             _context.Operations.Update(operation);
         }
     }
-}
-
-
-
-namespace EquipmentMonitoring.Persistence.Repositories
-{
-    
 }
