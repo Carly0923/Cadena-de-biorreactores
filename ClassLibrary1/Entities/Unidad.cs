@@ -20,11 +20,13 @@ namespace Dominio_Fermentación.Entities
         /// <summary> Estado actual del equipo. </summary>
         public Estado_equipo Estado { get; private set; } = Estado_equipo.Idle;
         /// <summary> Operaciones que puede ejecutar. </summary>
-        public List<Operation> Operations { get; private set; }
+        public List<Operation> Operations { get; } = new();
         /// <summary> Variables asociadas al proceso. </summary>
         public List<Variable> Variables { get; } = new();
         /// <summary> Operación activa, <see langword="null"/> si no hay ninguna activa. </summary>
         public Operation? ActiveOperation { get; private set; } = null;
+        public List<AutomationDevice> AutomationDevices { get; private set; } = new();
+
         #endregion
 
         #region Métodos

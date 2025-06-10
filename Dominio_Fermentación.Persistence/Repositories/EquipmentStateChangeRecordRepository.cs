@@ -17,12 +17,12 @@ namespace Dominio_Fermentación.Persistence.Repositories
             _context = context;
         }
 
-        public async Task AddAsync(EquipmentStateChangeRecord record)
+        public async Task AddAsync(EquipmentStateChangeRecords record)
         {
             await _context.EquipmentStateChangeRecords.AddAsync(record);
         }
 
-        public async Task<IEnumerable<EquipmentStateChangeRecord>> GetEquipmentStateChangeRecords(DateTime start, DateTime end)
+        public async Task<IEnumerable<EquipmentStateChangeRecords>> GetEquipmentStateChangeRecords(DateTime start, DateTime end)
         {
             return await _context.EquipmentStateChangeRecords
                 .Where(x => x.OccurringTime >= start && x.OccurringTime <= end)

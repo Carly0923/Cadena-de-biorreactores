@@ -18,9 +18,9 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Batch");
-            builder.OwnsOne(x => x.Id_Batch);
-            builder.OwnsOne(x => x.Initial_Date);
-            builder.OwnsOne(x => x.Final_Date);
+            builder.HasKey(x => new { x.Id_Batch, x.Initial_Date, x.Final_Date });
+           // builder.OwnsOne(x => x.Initial_Date);
+            //builder.OwnsOne(x => x.Final_Date);
             
         }
     }

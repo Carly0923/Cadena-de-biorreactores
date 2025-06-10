@@ -17,10 +17,12 @@ namespace Dominio_Fermentación.Entities
         #region Properties
         /// <summary> Nombre de la operación. </summary>
         public string Name { get; }
+        public Guid UnitId { get; }
         #endregion
-        public Operation(Guid id, string name) : base(id)
+        public Operation(Guid id, Guid unitId,string name) : base(id)
         {
             Name = name;
+            UnitId = unitId;
         }
     }
 }

@@ -9,42 +9,42 @@ using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Persistence.Repositories
 {
-    public class UnidadRepository
-        : IUnidadRepository
+    public class UnitRepository
+        : IUnitRepository
     {
         private readonly AppDbContext _context;
 
-        public UnidadRepository(AppDbContext context)
+        public UnitRepository(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task AddAsync(Unidad unit)
+        public async Task AddAsync(Unidad unidad)
         {
-            await _context.Unidads.AddAsync(unit);
+            await _context.Unidades.AddAsync(unidad);
         }
 
         public async void DeleteById(Guid id)
         {
-            var unit = await _context.Unidads.FindAsync(id);
-            if (unit is null)
+            var unidad = await _context.Unidades.FindAsync(id);
+            if (unidad is null)
                 return;
-            _context.Unidads.Remove(unit);
+            _context.Unidades.Remove(unidad);
         }
 
         public async Task<Unidad> GetByIdAsync(Guid id)
         {
-            return await _context.Unidads.FindAsync(id);
+            return await _context.Unidades.FindAsync(id);
         }
 
         public Task<IEnumerable<Unidad>> GetUnitsAsync()
         {
-            return Task.FromResult<IEnumerable<Unidad>>(_context.Unidads.ToList());
+            return Task.FromResult<IEnumerable<Unidad>>(_context.Unidades.ToList());
         }
 
-        public void Update(Unidad unit)
+        public void Update(Unidad unidad)
         {
-            _context.Unidads.Update(unit);
+            _context.Unidades.Update(unidad);
         }
 
     }

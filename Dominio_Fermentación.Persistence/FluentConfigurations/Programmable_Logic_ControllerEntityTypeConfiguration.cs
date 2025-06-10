@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Programmable_Logic_Controller");
-            builder.OwnsOne(x => x.IP_Address);
+            builder.HasBaseType<AutomationDevice>();
         }
     }
 }

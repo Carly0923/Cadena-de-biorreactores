@@ -5,7 +5,7 @@ namespace Dominio_Fermentación.Contracts.Repositories
     /// <summary>
     /// Define las funcionalidades de un repositorio de unidades.
     /// </summary>
-    public interface IUnidadRepository
+    public interface IUnitRepository
     {
         /// <summary>
         /// Añade una unidad a base de datos.

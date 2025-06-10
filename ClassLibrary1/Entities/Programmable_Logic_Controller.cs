@@ -21,7 +21,7 @@ namespace Dominio_Fermentación.Entities
         #endregion
 
         ///<summary> Constructor </summary>
-        public Programmable_Logic_Controller(Guid id, Estado_equipo state, Network_Address address) : base(id, address, state)
+        public Programmable_Logic_Controller(Guid id, Estado_equipo state, Dirección_Red address) : base(id, address, state)
         {
             //IP_Address = address;
             //estado_equipo_PLC = state;

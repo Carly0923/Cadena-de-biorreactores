@@ -11,16 +11,16 @@ namespace Dominio_Fermentación.Persistence.Repositories.Managers
     {
         private readonly AppDbContext _context;
 
-        //private IUnitRepository? _unit = null;
-        //public IUnitRepository Unit
-        //{
-        //    get
-        //    {
-        //        if (_unit is null)
-        //            _unit = new UnitRepository(_context);
-        //        return _unit;
-        //    }
-        //}
+        private IUnitRepository? _unit = null;
+        public IUnitRepository Unit
+        {
+            get
+            {
+                if (_unit is null)
+                    _unit = new UnitRepository(_context);
+                return _unit;
+            }
+        }
 
         private IVariableRepository? _variable = null;
         public IVariableRepository Variable
@@ -33,38 +33,38 @@ namespace Dominio_Fermentación.Persistence.Repositories.Managers
             }
         }
 
-        //private IOperationRepository? _operation = null;
-        //public IOperationRepository Operation
-        //{
-        //    get
-        //    {
-        //        if (_operation is null)
-        //            _operation = new OperationRepository(_context);
-        //        return _operation;
-        //    }
-        //}
+        private IOperationRepository? _operation = null;
+        public IOperationRepository Operation
+        {
+            get
+            {
+                if (_operation is null)
+                    _operation = new OperationRepository(_context);
+                return _operation;
+            }
+        }
 
-        //private IAutomationDeviceRepository? _automationDevice = null;
-        //public IAutomationDeviceRepository AutomationDevice
-        //{
-        //    get
-        //    {
-        //        if (_automationDevice is null)
-        //            _automationDevice = new AutomationDeviceRepository(_context);
-        //        return _automationDevice;
-        //    }
-        //}
+        private IAutomationDeviceRepository? _automationDevice = null;
+        public IAutomationDeviceRepository AutomationDevice
+        {
+            get
+            {
+                if (_automationDevice is null)
+                    _automationDevice = new AutomationDeviceRepository(_context);
+                return _automationDevice;
+            }
+        }
 
-        //private IEquipmentStateChangeRecordRepository? _equipmentStateChangeRecordRepository = null;
-        //public IEquipmentStateChangeRecordRepository EquipmentStateChangeRecord
-        //{
-        //    get
-        //    {
-        //        if (_equipmentStateChangeRecordRepository is null)
-        //            _equipmentStateChangeRecordRepository = new EquipmentStateChangeRecordRepository(_context);
-        //        return _equipmentStateChangeRecordRepository;
-        //    }
-        //}
+        private IEquipmentStateChangeRecordRepository? _equipmentStateChangeRecordRepository = null;
+        public IEquipmentStateChangeRecordRepository EquipmentStateChangeRecord
+        {
+            get
+            {
+                if (_equipmentStateChangeRecordRepository is null)
+                    _equipmentStateChangeRecordRepository = new EquipmentStateChangeRecordRepository(_context);
+                return _equipmentStateChangeRecordRepository;
+            }
+        }
 
         private IUnitOfWork? _unitOfWork = null;
         public IUnitOfWork UnitOfWork

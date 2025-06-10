@@ -31,7 +31,7 @@ namespace Dominio_Fermentación.Persistence.Repositories
 
         public async Task<IEnumerable<AutomationDevice>> GetAutomationDeviceByUnitAsync(Guid unitId)
         {
-            var unit = await _context.Unidads.Include(u => u.AutomationDevices).FirstAsync(u => u.Id == unitId);
+            var unit = await _context.Unidades.Include(u => u.AutomationDevices).FirstAsync(u => u.Id == unitId);
             return unit.AutomationDevices;
         }
 

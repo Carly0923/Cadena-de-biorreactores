@@ -1,4 +1,5 @@
 ﻿using Dominio_Fermentación.Entities;
+using Dominio_Fermentación.Records;
 using Dominio_Fermentación.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
@@ -17,10 +18,11 @@ namespace Dominio_Fermentación.Persistence.Context
     {
         #region Tablas
         public DbSet<Variable> Variables => Set<Variable>();
-        public DbSet<Nodo_Comunicación> Comunication_Nodes => Set<Nodo_Comunicación>();
-        public DbSet<Id_unidad> Id_unidads => Set<Id_unidad>();
         public DbSet<Batch> Batchs => Set<Batch>();
-        //public DbSet<EquipmentStateChangeRecord> EquipmentStateChangeRecords => Set<EquipmentStateChangeRecord>();
+        public DbSet<EquipmentStateChangeRecords> EquipmentStateChangeRecords => Set<EquipmentStateChangeRecords>();
+        public DbSet<Unidad> Unidades => Set<Unidad>();
+        public DbSet<AutomationDevice> AutomationDevices => Set<AutomationDevice>();
+        public DbSet<Operation> Operations => Set<Operation>();
 
 
 
