@@ -27,11 +27,8 @@
                     </Grid>
                 </Border>
 
-                <Canvas Grid.Row="1">
-                    <ListView>
-                        
-                    </ListView>
-                </Canvas>
+                <ListView Grid.Row="1" ItemsSource="{Binding lotes}">                    
+                </ListView>
 
                 <Border Grid.Row="2" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
                     <Grid>
@@ -52,12 +49,15 @@
             </Grid.RowDefinitions>
 
             <Canvas Grid.Row="0" >
-
+                <TextBlock Text="{Binding lote.Producto}" />
+                    <TextBlock Text="{Binding lote.Etapa}" Canvas.Top="50" />
+                    <TextBlock Text="{Binding lote.Initial_date}" Canvas.Top="70" />
+                    <TextBlock Text="{Binding lote.Final_date}" Canvas.Top="90" />
             </Canvas>
 
             <Border Grid.Row="1" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
                 <Grid>
-                    <Button Content="Modificar" Height="25" Width="65" Canvas.Left="450" Canvas.Top="5" Click="ML" Margin="454,5,21,5"/>
+                    <Button Content="Modificar" Height="25" Width="65" Canvas.Left="550" Canvas.Top="5" Click="ML" />
                 </Grid>
             </Border>
 
