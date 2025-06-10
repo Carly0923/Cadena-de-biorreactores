@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Entities
         #region Properties
         /// <summary> Entidad numérica que después debe ser acompañada por la unidad de medida </summary>
         public Guid UnitId { get; }
-        public float Medicion { get; set; }
+        public string Medicion { get; set; }
         /// <summary> La unidad de medida </summary>
         public Unidad_de_medida unidad { get; set; }
         ///<summary> Punto del nodo de comunicación </summary>
@@ -26,7 +26,7 @@ namespace Dominio_Fermentación.Entities
 
         #region Metodos
         ///Constructor
-        public Variable(Guid id, Guid unitId,float number, Unidad_de_medida Unidad, Nodo_Comunicación node) : base(id)
+        public Variable(Guid id, Guid unitId,string number, Unidad_de_medida Unidad, Nodo_Comunicación node) : base(id)
         {
             UnitId = unitId;
             Medicion = number;
