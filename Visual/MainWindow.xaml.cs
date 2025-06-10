@@ -33,7 +33,7 @@ namespace Visual
         {
             if (Autent)
             {
-                MessageBox.Show("Gestión de Usuarios");
+                //MessageBox.Show("Gestión de Usuarios");
                 GUsuarios gUsuarios = new GUsuarios();
                 this.Close();
                 gUsuarios.Show();
@@ -51,7 +51,7 @@ namespace Visual
 
             if (Autent)
             {
-                MessageBox.Show("Gestión de Lotes");
+                //MessageBox.Show("Gestión de Lotes");
                 GLotes gLotes = new GLotes();
                 this.Hide();
                 gLotes.Show();

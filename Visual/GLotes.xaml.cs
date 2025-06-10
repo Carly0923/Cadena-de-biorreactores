@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -173,8 +174,7 @@ namespace Visual
         //Boton para añadir lote
         private void AL(object sender, RoutedEventArgs e)
         {
-            ALote aLote = new ALote();
-            aLote.Show();
+            ALote.Visibility = Visibility.Visible;
             //MessageBox.Show("No esta implementado");
 
         }
@@ -192,6 +192,48 @@ namespace Visual
             
             MessageBox.Show("No esta implementado");
 
+        }
+
+        //Boton para abrir ventana de Añadir lote
+        private void A(object sender, RoutedEventArgs e)
+        {
+            Productos p = new Productos();
+            string? a = Nproducto.Text as string;             
+            
+            if (a == "Abdala") 
+            {
+                p = Visual.GLotes.Productos.RBD_Abdala;
+            }
+
+            else if (a == "Hepatitis")
+            {
+                p = Visual.GLotes.Productos.Heberviobac_Hepatitis_B;
+            }
+
+            else
+            {
+                MessageBox.Show("Datos mal implementados");
+                Nproducto.Text = null;
+                NID.Text = null;
+                NFD.Text = null;
+                return;
+            }
+
+            
+            Lotes lote = new Lotes (new DateTime (2023,09,27), new DateTime(2023,09,27),p,Etapas.Etapa_0);
+            lotes.Add(lote);
+            //MessageBox.Show("No esta implementado");
+
+        }
+
+        //Boton para cerrar ventana de Añadir lote
+        private void C(object sender, RoutedEventArgs e)
+        {
+            ALote.Visibility= Visibility.Hidden;
+            Nproducto.Text = null;
+            NID.Text = null;
+            NFD.Text = null;
+            //MessageBox.Show("No esta implementado");
         }
 
     }

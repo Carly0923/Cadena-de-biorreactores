@@ -27,7 +27,7 @@
                     </Grid>
                 </Border>
 
-                <ListView Grid.Row="1" ItemsSource="{Binding lotes}">                    
+                <ListView Grid.Row="1" ItemsSource="{Binding lotes}">
                 </ListView>
 
                 <Border Grid.Row="2" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
@@ -49,10 +49,21 @@
             </Grid.RowDefinitions>
 
             <Canvas Grid.Row="0" >
-                <TextBlock Text="{Binding lote.Producto}" />
-                    <TextBlock Text="{Binding lote.Etapa}" Canvas.Top="50" />
-                    <TextBlock Text="{Binding lote.Initial_date}" Canvas.Top="70" />
-                    <TextBlock Text="{Binding lote.Final_date}" Canvas.Top="90" />
+                <Border Name="ALote" Height="300" Width="300" Canvas.Left="125" Canvas.Top="45" BorderThickness="3" BorderBrush="Black" Visibility="Hidden">
+                    <Canvas>
+                        <TextBlock Text="Nuevo lote" Canvas.Left="107"  Canvas.Top="10" />
+                        <TextBlock Text="Producto" Canvas.Left="61" Canvas.Top="43"/>
+                        <TextBox Name="Nproducto" Canvas.Top="64" Width="150" Canvas.Left="61"  />
+                        <TextBlock Text="Fecha de inicio" Canvas.Left="61" Canvas.Top="100"/>
+                        <TextBox Name="NID" Canvas.Top="121" Width="150" Canvas.Left="61"/>
+                        <TextBlock Text="Fecha de fin" Canvas.Left="61" Canvas.Top="157"/>
+                        <TextBox Name="NFD" Canvas.Top="178" Width="150" Canvas.Left="61"/>
+                        <Button Content="Aceptar" Canvas.Left="62" Canvas.Top="226" Height="25" Width="55" Click="A"/>
+                        <Button Content="Cancelar" Canvas.Left="164" Canvas.Top="226" Height="25" Width="55" Click="C"/>
+
+                    </Canvas>
+
+                </Border>
             </Canvas>
 
             <Border Grid.Row="1" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
