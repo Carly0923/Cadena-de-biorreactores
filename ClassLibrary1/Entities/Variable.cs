@@ -9,11 +9,10 @@ using Dominio_Fermentación.Entities;
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.ValueObjects;
 
-
 namespace Dominio_Fermentación.Entities
 {
     public class Variable
-          : Entity
+     : Entity
     {
         #region Properties
         /// <summary> Entidad numérica que después debe ser acompañada por la unidad de medida </summary>
@@ -21,12 +20,12 @@ namespace Dominio_Fermentación.Entities
         /// <summary> La unidad de medida </summary>
         public Unidad_de_medida unidad { get; set; }
         ///<summary> Punto del nodo de comunicación </summary>
-        public Comunication_Node Node { get; set; }
+        public Nodo_Comunicación Node { get; set; }
         #endregion
 
         #region Metodos
         ///Constructor
-        public Variable(float number, Unidad_de_medida Unidad, Comunication_Node node, Guid id) : base(id)
+        public Variable(Guid id, float number, Unidad_de_medida Unidad, Nodo_Comunicación node) : base(id)
         {
             Medicion = number;
             unidad = Unidad;

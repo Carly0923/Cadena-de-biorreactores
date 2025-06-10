@@ -10,7 +10,7 @@ using Dominio_Fermentación.Types;
 namespace Dominio_Fermentación.Entities
 {
     public class Batch
-      : Entity
+     : Entity
     {
         #region Propiedades
         /// <summary> Identificador del lote producido </summary>
@@ -28,7 +28,7 @@ namespace Dominio_Fermentación.Entities
         /// Constructor
         public Batch(Id_unidad id_batch, DateTime inicio, DateTime final, Guid id) : base(id)
         {
-            #region Declaración
+            #region 
             Id_Batch = id_batch;
             Initial_Date = inicio;
             Final_Date = final;
