@@ -11,11 +11,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Dominio_Fermentación.Persistence.FluentConfigurations
 {
     internal class Programmable_Logic_ControllerEntityTypeConfiguration
-        : EntityTypeConfigurationBase<Programmable_Logic_Controller>
+        : IEntityTypeConfiguration<Programmable_Logic_Controller>
     {
-        public override void Configure(EntityTypeBuilder<Programmable_Logic_Controller> builder)
+        public void Configure(EntityTypeBuilder<Programmable_Logic_Controller> builder)
         {
-            base.Configure(builder);
+            //base.Configure(builder);
             builder.ToTable("Programmable_Logic_Controller");
             builder.HasBaseType<AutomationDevice>();
         }
