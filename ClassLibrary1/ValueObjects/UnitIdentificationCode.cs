@@ -8,7 +8,7 @@ using Dominio_Fermentación.Errors;
 using FluentResults;
 using System.Text.RegularExpressions;
 using Dominio_Fermentación.Rules;
-using static Dominio_Fermentación.Rules.CodeMustHaveSeparators;
+using static Dominio_Fermentación.Rules.CodeMustHaveSeparator;
 
 namespace Dominio_Fermentación.ValueObjects
 {
@@ -27,7 +27,7 @@ namespace Dominio_Fermentación.ValueObjects
         public static Result<UnitIdentificationCode> Create(string value)
         {
             var result = CheckRules(
-                new CodeMustHaveSeparators(value));
+                new CodeMustHaveSeparator(value));
             if (result.IsFailed)
                 return result.ToResult<UnitIdentificationCode>();
 

@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 ///Esto debo arreglarlo
 namespace Dominio_Fermentación.Rules
 {
-    public record CodeMustHaveSeparators(string valor) : IBussiness_Rules
+    public record CodeMustHaveSeparator(string valor) : IBussiness_Rules
     {
         public Result CheckRule()
         {

@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dominio_Fermentación.Common;
+﻿using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Types;
+using Dominio_Fermentación.Entities.Abstract;
+using Dominio_Fermentación.Errors;
+using Dominio_Fermentación.Rules;
+using FluentResults;
+using Microsoft.VisualBasic;
+using Dominio_Fermentación.ValueObjects;
 
 
 namespace Dominio_Fermentación.Entities
@@ -14,8 +15,10 @@ namespace Dominio_Fermentación.Entities
     {
         #region Propiedades
         /// <summary> Identificador del lote producido </summary>
-        public Id_unidad Id_Batch { get; set; }
+        public UnitIdentificationCode Codelote { get; set; }
+        //  public Id_unidad Id_Batch { get; set; }
         /// <summary> Fecha de Inicio </summary>
+        public string Namelote { get; set; }
         public DateTime Initial_Date { get; set; }
         /// <summary> Fecha de Finalización del lote </summary>
         public DateTime Final_Date { get; set; }
@@ -26,10 +29,11 @@ namespace Dominio_Fermentación.Entities
         #endregion
         /// Métodos
         /// Constructor
-        public Batch(Id_unidad id_batch, DateTime inicio, DateTime final, Guid id) : base(id)
+        public Batch(Guid id, string namelote, UnitIdentificationCode codelote, DateTime inicio, DateTime final) : base(id)
         {
             #region 
-            Id_Batch = id_batch;
+            Namelote = namelote;
+            Codelote = codelote;
             Initial_Date = inicio;
             Final_Date = final;
             #endregion
