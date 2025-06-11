@@ -2,53 +2,29 @@
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Rules;
 using FluentResults;
+using Dominio_Fermentación.ValueObjects;
 
 namespace Dominio_Fermentación.Entities
 {
-  public abstract class Programmable_Logic_Controller
-     :AutomationDevice
+    public class Programmable_Logic_Controller
+       : AutomationDevice
     {
-   #region Propiedades
-   /// <summary> Número de identificación del PLC </summary>
-   public Id_unidad Id_PLC { get; set; }
-   /// <summary> La marca del PLC es un enumerado declarado en Types </summary>
-   public Marca_PLC marca_PLC { get; set; } = Marca_PLC.S7_300;
-   /// <summary> Dirección IP </summary>
-   public Network_Address IP_Address { get; set; }
-   /// <summary> Estado de funcionamiento del PLC </summary>
-   public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
-   #endregion
-
-   ///<summary> Constructor </summary>
-    public Programmable_Logic_Controller( Guid id, Estado_equipo state, Network_Address address): base(id, address, state) 
-    {
-     IP_Address = address;
-     estado_equipo_PLC = state;
-     }
-      /// <summary> Lleva al dispositivo a un estado de falla. </summary>
-      /// <exception cref="InvalidOperationException"></exception>
-     public Result GetIntoFaultState()
-     {
-            var result = CheckRules(
-                     new EquipmentCannotGoIntoFaultStateIfIsAlreadyOnIt(IP_Address);
-            if (result.IsFailed)
-                return result;
-            estado_equipo_PLC = Estado_equipo.Faulted;
-            return Result.Ok();
-        }
-
-        /// <summary> Saca el dispositivo del estado de falla. </summary>
-        /// <exception cref="InvalidOperationException"></exception>
-        public Result GetOutOfFaultState()
+        #region Propiedades
+        /// <summary> Número de identificación del PLC </summary>
+       // public Id_unidad Id_PLC { get; set; }
+        /// <summary> La marca del PLC es un enumerado declarado en Types </summary>
+       // public Marca_PLC marca_PLC { get; set; } = Marca_PLC.S7_300;
+        /// <summary> Dirección IP </summary>
+        //public Network_Address IP_Address { get; set; }
+        /// <summary> Estado de funcionamiento del PLC </summary>
+       // public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
+        #endregion
+       // private Programmable_Logic_Controller() { }
+        ///<summary> Constructor </summary>
+        public Programmable_Logic_Controller(Guid id,  Dirección_Red address, Estado_equipo state) : base(id, address, state )
         {
-         var result = CheckRules(
-             new EquipmentCannotGetOutOfFaultedStateIfItsNotInIt(estado_equipo_PLC));
-         if (result.IsFailed)
-             return result;
-
-         estado_equipo_PLC = Estado_equipo.Idle;
-         return Result.Ok();
+            //Address = address;
+            //estado_equipo_PLC = state;
         }
     }
-
 }

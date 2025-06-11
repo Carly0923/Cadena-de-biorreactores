@@ -27,7 +27,8 @@
                     </Grid>
                 </Border>
 
-                <ListView Grid.Row="1" ItemsSource="{Binding lotes}">
+                <ListView Name="loteslist" Grid.Row="1" ItemsSource="{Binding lots.Alllotes}" MouseDoubleClick="ListView_MouseDown">
+                    
                 </ListView>
 
                 <Border Grid.Row="2" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
@@ -64,6 +65,15 @@
                     </Canvas>
 
                 </Border>
+
+                <Canvas Name="propiesdades" >
+                    <TextBlock Text="Fecha de Inicio:" Canvas.Left="56" Canvas.Top="51" FontSize="20"/>
+                    <TextBlock Name="TID" Text="" Canvas.Left="206" Canvas.Top="51" FontSize="20"/>
+                    <TextBlock Text="Fecha de Fin:" Canvas.Left="56" Canvas.Top="109" FontSize="20"/>
+                    <TextBlock Name="TFD" Text="" Canvas.Left="206" Canvas.Top="114" FontSize="20"/>
+
+                </Canvas>
+
             </Canvas>
 
             <Border Grid.Row="1" Background="Black"  BorderThickness="5" BorderBrush="Aqua">
