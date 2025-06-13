@@ -13,7 +13,7 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Unitdades");
-            builder.OwnsOne(unit => unit.Code);
+            builder.OwnsOne(unit => unit.Codeunidad);
             builder.HasMany(u => u.Variables).WithOne().HasForeignKey(x => x.UnitId);
             builder.HasMany(u => u.Operations).WithOne().HasForeignKey(x => x.UnitId);
             builder.Navigation(u => u.ActiveOperation);

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dominio_Fermentación.Types;
-using Dominio_Fermentación.Entities.Abstract;
-using Dominio_Fermentación.Entities;
+﻿
 using Dominio_Fermentación.Common;
 using Dominio_Fermentación.ValueObjects;
 
@@ -19,18 +12,18 @@ namespace Dominio_Fermentación.Entities
         public Guid UnitId { get; }
         public string Medicion { get; set; }
         /// <summary> La unidad de medida </summary>
-        public Unidad_de_medida unidad { get; set; }
+        public Unidad_de_medida Unidad { get; set; }
         ///<summary> Punto del nodo de comunicación </summary>
         public Nodo_Comunicación Node { get; set; }
         #endregion
-
+        protected Variable() { }
         #region Metodos
         ///Constructor
-        public Variable(Guid id, Guid unitId,string number, Unidad_de_medida Unidad, Nodo_Comunicación node) : base(id)
+        public Variable(Guid id, Guid unitId,string number, Unidad_de_medida unidad, Nodo_Comunicación node) : base(id)
         {
             UnitId = unitId;
             Medicion = number;
-            unidad = Unidad;
+            Unidad = unidad;
             Node = node;
         }
         #endregion

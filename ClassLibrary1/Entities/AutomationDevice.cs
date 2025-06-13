@@ -1,15 +1,10 @@
 ﻿using Dominio_Fermentación.Common;
 using Dominio_Fermentación.Entities.Abstract;
-using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Errors;
+using Dominio_Fermentación.Rules;
 using Dominio_Fermentación.Types;
 using Dominio_Fermentación.ValueObjects;
 using FluentResults;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dominio_Fermentación.Entities
 {
@@ -29,6 +24,8 @@ namespace Dominio_Fermentación.Entities
         #endregion
 
         #region Métodos
+        protected AutomationDevice() { }
+
         public AutomationDevice(Guid id, Dirección_Red address, Estado_equipo state) : base(id)
         {
             Address = address;

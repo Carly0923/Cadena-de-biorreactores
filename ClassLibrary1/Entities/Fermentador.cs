@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio_Fermentación.Types;
 using Dominio_Fermentación.Entities.Abstract;
+using Dominio_Fermentación.ValueObjects;
 
 namespace Dominio_Fermentación.Entities
 {
@@ -12,7 +13,7 @@ namespace Dominio_Fermentación.Entities
   {
    #region
    /// <summary> identificador del fermentador, elemento que no puede ser NULL </summary>
-   public Id_unidad ID_Fermentador { get; set; }
+   public UnitIdentificationCode ID_Fermentador { get; set; }
    /// <summary> Enumerado para el volumen de trabajo útil del fermentador </summary>
    public volumen_trabajo_util Volumen { get; set; } = volumen_trabajo_util.V75L;
    /// <summary> Etapa de crecimiento microbiano </summary>
@@ -20,7 +21,7 @@ namespace Dominio_Fermentación.Entities
    #endregion
    /// Métodos
    /// <summary> Constructor Fermentador </summary>
-    public Fermentador(Id_unidad id_fermentador)
+    public Fermentador(UnitIdentificationCode id_fermentador)
     {
      ID_Fermentador = id_fermentador;
     }

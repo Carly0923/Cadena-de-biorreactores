@@ -17,8 +17,8 @@ namespace Dominio_Fermentación.ValueObjects
         : ValueObject
     {
         public string Value { get; }
-
-        public UnitIdentificationCode(
+        private UnitIdentificationCode() { }
+        private UnitIdentificationCode(
             string value)
         {
             Value = value;

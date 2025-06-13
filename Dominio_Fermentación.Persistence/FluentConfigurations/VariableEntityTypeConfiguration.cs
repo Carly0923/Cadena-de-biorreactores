@@ -17,7 +17,7 @@ namespace Dominio_Fermentación.Persistence.FluentConfigurations
         {
             base.Configure(builder);
             builder.ToTable("Variables");
-            builder.OwnsOne(x => x.unidad); 
+            builder.OwnsOne(x => x.Unidad); 
             builder.OwnsOne(x => x.Node); 
         }
     }

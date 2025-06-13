@@ -19,9 +19,7 @@ namespace Dominio_Fermentación.Contracts.Repositories
         /// Obtiene todas las Variables a partir de la unidad a la que pertenecen.
         /// </summary>
         Task<IEnumerable<Variable>> GetVariablesByUnitAsync(Guid unitId);
-        /// <summary>
-        /// Actualiza la información de una variable.
-        /// </summary>
+
         void Update(Variable variable);
         /// <summary>
         /// Elimina una variable a partir de su Id.

@@ -6,6 +6,7 @@ using Dominio_Fermentación.Types;
 using FluentResults;
 using Microsoft.VisualBasic;
 using Dominio_Fermentación.ValueObjects;
+
 namespace Dominio_Fermentación.Entities
 {
     /// <summary> Modela un equipo automático. </summary>
@@ -16,7 +17,7 @@ namespace Dominio_Fermentación.Entities
         /// <summary> Nombre del equipo. </summary>
         public string Name { get; set; }
         /// <summary> Código del equipo. </summary>
-        public UnitIdentificationCode Code { get; set; }
+        public UnitIdentificationCode Codeunidad { get; set; }
         /// <summary> Estado actual del equipo. </summary>
         public Estado_equipo Estado { get; private set; } = Estado_equipo.Idle;
         /// <summary> Operaciones que puede ejecutar. </summary>
@@ -28,12 +29,12 @@ namespace Dominio_Fermentación.Entities
         public List<AutomationDevice> AutomationDevices { get; private set; } = new();
 
         #endregion
-
+        protected Unidad() { }
         #region Métodos
-        public Unidad(Guid id, string name, UnitIdentificationCode code) : base(id)
+        public Unidad(Guid id, string name, UnitIdentificationCode codeunidad) : base(id)
         {
             Name = name;
-            Code = code;
+            Codeunidad = codeunidad;
         }
         /// <summary>
         /// Inicia la ejecución de una operación en la unidad.

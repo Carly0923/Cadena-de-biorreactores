@@ -11,5 +11,6 @@ namespace Dominio_Fermentación.Contracts.Repositories.Managers
         IAutomationDeviceRepository AutomationDevice { get; }
         IEquipmentStateChangeRecordRepository EquipmentStateChangeRecord { get; }
         IUnitOfWork UnitOfWork { get; }
+        IBatchRepository Batch { get; }
     }
 }

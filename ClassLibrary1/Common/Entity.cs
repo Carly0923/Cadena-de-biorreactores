@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio_Fermentación.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Dominio_Fermentación.Common
    #region Properties
    public Guid Id { get; set; }
    #endregion
+   protected Entity() { }
    protected Entity(Guid id)
    {
     Id = id;

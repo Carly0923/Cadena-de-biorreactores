@@ -6,7 +6,7 @@ using Dominio_Fermentación.ValueObjects;
 
 namespace Dominio_Fermentación.Entities
 {
-    public abstract class Programmable_Logic_Controller
+    public class Programmable_Logic_Controller
        : AutomationDevice
     {
         #region Propiedades
@@ -19,8 +19,8 @@ namespace Dominio_Fermentación.Entities
         /// <summary> Estado de funcionamiento del PLC </summary>
         //public Estado_equipo estado_equipo_PLC { get; set; } = Estado_equipo.Executing;
         #endregion
-       // private Programmable_Logic_Controller() { }
         ///<summary> Constructor </summary>
+        private Programmable_Logic_Controller() { }
         public Programmable_Logic_Controller(Guid id, Dirección_Red address, Estado_equipo state) : base(id, address, state)
         {
             //IP_Address = address;

@@ -17,6 +17,8 @@ namespace Dominio_Fermentación.ValueObjects
         ///  <summary> Cantidad de registros a leer a partir del inicial. </summary>
         public int RegisterLength { get; }
         #endregion
+        private Nodo_Comunicación() { }
+       
         public Nodo_Comunicación(int registerPosition, int registerLength)
         {
             RegisterPosition = registerPosition;

@@ -1,11 +1,5 @@
 ﻿using Dominio_Fermentación.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dominio_Fermentación.Common;
-using Dominio_Fermentación.Entities.Abstract;
 
 namespace Dominio_Fermentación.Entities
 {

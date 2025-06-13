@@ -21,6 +21,7 @@ namespace Dominio_Fermentación.ValueObjects
         /// <summary> Puerto de acceso. </summary>
         public int Port { get; }
         #endregion
+        private Dirección_Red() { }
         private Dirección_Red(string iPAddress, int port)
         {
             IPAddress = iPAddress;

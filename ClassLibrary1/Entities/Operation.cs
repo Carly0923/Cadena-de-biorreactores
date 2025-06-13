@@ -19,7 +19,8 @@ namespace Dominio_Fermentación.Entities
         public string Name { get; }
         public Guid UnitId { get; }
         #endregion
-        public Operation(Guid id, Guid unitId,string name) : base(id)
+        protected Operation() { }
+        public Operation(Guid id, Guid unitId, string name) : base(id)
         {
             Name = name;
             UnitId = unitId;

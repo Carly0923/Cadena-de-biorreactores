@@ -77,7 +77,16 @@ namespace Dominio_Fermentación.Persistence.Repositories.Managers
             }
         }
 
-
+        private IBatchRepository? _batch = null;
+        public IBatchRepository Batch
+        {
+            get
+            {
+                if (_batch is null)
+                    _batch = new BatchRepository(_context);
+                return _batch;
+            }
+        }
         public AppRepositoryManager(AppDbContext context)
         {
             _context = context;
