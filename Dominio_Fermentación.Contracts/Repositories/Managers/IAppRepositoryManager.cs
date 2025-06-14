@@ -1,6 +1,4 @@
-﻿using Dominio_Fermentación.Contracts;
-
-namespace Dominio_Fermentación.Contracts.Repositories.Managers
+﻿namespace Dominio_Fermentación.Contracts.Repositories.Managers
 {
 
     public interface IAppRepositoryManager

@@ -1,8 +1,8 @@
 ﻿using Dominio_Fermentación.Contracts.Repositories.Managers;
 using Dominio_Fermentación.Contracts.Repositories;
-using Dominio_Fermentación.Contracts;
 using Dominio_Fermentación.Persistence.Context;
 using EquipmentMonitoring.Persistence;
+using Dominio_Fermentación.Contracts;
 
 namespace Dominio_Fermentación.Persistence.Repositories.Managers
 {
