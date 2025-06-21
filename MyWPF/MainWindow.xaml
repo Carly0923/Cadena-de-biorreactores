@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:MyWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Height="NaN" Margin="329,179,329,188" Width="NaN">Hola mundo</Button>
+    <Grid Name ="MainVentana">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Height="NaN" Margin="32,17,32,18" Width="NaN">Hola mundo</Button>
+        
     </Grid>
 </Window>
