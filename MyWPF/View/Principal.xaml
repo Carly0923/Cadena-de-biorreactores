@@ -1,0 +1,42 @@
+﻿<Window x:Class="MyWPF.View.Principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FERMAC 1.0" Height="400" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Formulario de ingreso -->
+        <StackPanel Grid.Column="0" Margin="0,0,20,0" VerticalAlignment="Top">
+            <TextBlock Text="Agregar Fermentador" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <TextBlock Text="Nombre:"/>
+            <TextBox x:Name="txtNombre" Margin="0,0,0,10"/>
+            <TextBlock Text="Código:"/>
+            <TextBox x:Name="txtCodigo" Margin="0,0,0,10"/>
+            <Button Content="Agregar" Width="100" Margin="0,10,0,0" /> <!--Click="BtnAgregarFermentador_Click"-->
+            <Button Content="Actualizar" Width="100" Margin="0,10,0,0" /> <!--Click="BtnActualizarFermentador_Click"-->
+            <Button Content="Cargar" Width="100" Margin="0,10,0,0" /> <!--Click="BtnCargar_Click"-->
+            <Button Content="Eliminar" Width="100" Margin="0,10,0,0" /> <!--Click="BtnEliminarFermentador_Click"-->
+        </StackPanel>
+
+        <!-- DataGrid de fermentadores -->
+        <DataGrid x:Name="FermentersDataGrid" Grid.Column="1" ItemsSource="{Binding Fermenters}" AutoGenerateColumns="False"
+                  IsReadOnly="True" Margin="0,0,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Código" Binding="{Binding Code}" Width="*"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Sate}" Width="*"/>
+                <DataGridTextColumn Header="Fase" Binding="{Binding Phase}" Width="*"/>
+                <DataGridTextColumn Header="Volumen" Binding="{Binding Volume}" Width="*"/>
+                <DataGridTextColumn Header="Operación Activa" Binding="{Binding ActiveOperationId}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

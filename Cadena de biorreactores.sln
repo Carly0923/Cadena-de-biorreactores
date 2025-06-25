@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación.Persi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio_Fermentación.Contracts", "Dominio_Fermentación.Contracts\Dominio_Fermentación.Contracts.csproj", "{14AC29BB-85DD-4F6C-AE07-D14F640410C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWPF", "MyWPF\MyWPF.csproj", "{707D209A-D75F-49A6-B026-D6416B80D4FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWPF", "MyWPF\MyWPF.csproj", "{707D209A-D75F-49A6-B026-D6416B80D4FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio_Fermentación.Application", "Dominio Fermentacion.Application\Dominio_Fermentación.Application.csproj", "{87C1DD0A-9360-40E1-A1A5-65C313B6A81F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{707D209A-D75F-49A6-B026-D6416B80D4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707D209A-D75F-49A6-B026-D6416B80D4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707D209A-D75F-49A6-B026-D6416B80D4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C1DD0A-9360-40E1-A1A5-65C313B6A81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C1DD0A-9360-40E1-A1A5-65C313B6A81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C1DD0A-9360-40E1-A1A5-65C313B6A81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C1DD0A-9360-40E1-A1A5-65C313B6A81F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
